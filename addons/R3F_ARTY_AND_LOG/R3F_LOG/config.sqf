@@ -54,7 +54,7 @@ R3F_LOG_CFG_objets_heliportables = [
     	"O_Ifrit_F",
     	"O_Ifrit_GMG_F",
     	"Land_Cargo_House_V1_F",
-    	"Land_Cargo_House_V2_F",
+    	"Land_Cargo_House_V2_F"
 ];
 
 
