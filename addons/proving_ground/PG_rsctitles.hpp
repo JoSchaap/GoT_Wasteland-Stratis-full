@@ -30,7 +30,7 @@
 			w = 0.37;
 			colorText[] = {1, 1, 1, 1};
 			colorBackground[] = {0.388, 0.545, 0.247, 0};
-			font = "Zeppelin32";
+			font = "TahomaB";
 			sizeEx = 0.03;
 		};
 		

@@ -9,7 +9,7 @@ class RscBackground {
 	text = ""; 
 	ColorBackground[] = {0.48, 0.5, 0.35, 1}; 
 	ColorText[] = {0.1, 0.1, 0.1, 1}; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	SizeEx = 1; 
 };
 
@@ -36,7 +36,7 @@ class RscCombo {
 	color[] = {0, 0, 0, 0.6}; 
 	colorActive[] = {0, 0, 0, 1}; 
 	colorDisabled[] = {0, 0, 0, 0.3}; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	sizeEx = 0.03921; 
 	class ScrollBar { 
 		color[] = {1, 1, 1, 0.6}; 
@@ -61,7 +61,7 @@ class RscEdit {
 	text = ""; 
 	size = 0.2; 
 	style = "0x00 + 0x40"; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	sizeEx = 0.03921; 
 };
 
@@ -88,7 +88,7 @@ class RscIGUIListBox {
 	arrowFull = "#(argb,8,8,3)color(1,1,1,1)"; 
 	type = 5; 
 	style = 16; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	maxHistoryDelay = 1; 
 	autoScrollSpeed = -1; 
 	autoScrollDelay = 5; 
@@ -124,7 +124,7 @@ class RscText {
 	h = 0.037; 
 	w = 0.3; 
 	style = 256; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	SizeEx = 0.03921; 
 };
 
@@ -143,7 +143,7 @@ class RscTitle : RscText {
 	colorText[] = {0.543, 0.5742, 0.4102, 1}; 
 	text = ""; 
 	h = 0.037; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	SizeEx = 0.03921; 
 };
 
@@ -172,7 +172,7 @@ class RscShortcutButton {
 	animTexturePressed = "\ca\ui\data\ui_button_down_ca.paa"; 
 	animTextureDefault = "\ca\ui\data\ui_button_default_ca.paa"; 
 	period = 0.4; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	size = 0.03921; 
 	sizeEx = 0.03921; 
 	text = ""; 
@@ -183,14 +183,14 @@ class RscShortcutButton {
 	action = ""; 
 
 	class Attributes { 
-		font = "Zeppelin32"; 
+		font = "TahomaB"; 
 		color = "#E5E5E5"; 
 		align = "left"; 
 		shadow = "true"; 
 	};
 
 	class AttributesImage { 
-		font = "Zeppelin32"; 
+		font = "TahomaB"; 
 		color = "#E5E5E5"; 
 		align = "left"; 
 	};
@@ -245,7 +245,7 @@ class RscIGUIShortcutButton : RscShortcutButton {
 	periodFocus = 1.2; 
 	periodOver = 0.8; 
 	period = 0.4; 
-	font = "Zeppelin32"; 
+	font = "TahomaB"; 
 	size = 0.03921; 
 	sizeEx = 0.03921; 
 	text = ""; 
@@ -256,7 +256,7 @@ class RscIGUIShortcutButton : RscShortcutButton {
 	action = ""; 
 
 	class Attributes { 
-		font = "Zeppelin32"; 
+		font = "TahomaB"; 
 		color = "#E5E5E5"; 
 		align = "center"; 
 		shadow = "true"; 
