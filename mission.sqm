@@ -28,7 +28,7 @@ class Mission
 	class Intel
 	{
 		briefingName="GoT Wasteland v1.08 (GoT/JoSchaap)";
-		briefingDescription="GoT (Complete Edition) Wasteland Survival Sandbox - Originally by: 404Games.co.uk - modded by: JoSchaap - Also visit: got2dayz.nl or fb.me/got2dayz - Mission Source+DL at: github.com/JoSchaap";
+		briefingDescription="GoT (Complete Edition) Wasteland Survival Sandbox - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.30000001;
 		startWind=0.2;

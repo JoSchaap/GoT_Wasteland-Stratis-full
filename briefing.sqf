@@ -148,16 +148,7 @@ player createDiaryRecord["GoT2DayZ",
 "Contact Admin",
 "
 <br/>
-	We currently have one active admin in A3 (we hope to add more soon):<br/><br/>
-	- JoSchaap<br/>
-	You can contact admins through different ways.<br/>
-	<br/>
-	 1) Join our Teamspeak channel on teamspeak.gotlike.nl -> Arma3.<br/>
-	 2) Leave a message on our chat on www.got2dayz.nl<br/>
-	 3) Send us a private message on facebook: fb/me/GoT2DayZ<br/>
-	<br/>
-	NOTICE! The server may crash unexpectedly (No message recieved) <br/>
-	If this happens it will autorestart and be back within 10 seconds! <br/>
+	The server owner can add his own admin information here<br/>
 
 "
 ]
@@ -168,9 +159,9 @@ player createDiaryRecord["GoT2DayZ",
 "Credits",
 "
 <br/>
-	Hosting and mod editting:<br/><br/>
-	JoSchaap<br/>
-	Anyone who files issues or pull requests on the GiT's<br/>
+	Mod editting:<br/><br/>
+	-JoSchaap<br/>
+	-Anyone who files issues or pull requests on the GiT's<br/>
 "
 ]
 ];
