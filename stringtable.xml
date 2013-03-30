@@ -28,7 +28,7 @@
 			<English>You are considered team-killer and therefore not allowed in BLUFOR or OPFOR teams. You will shortly be kicked back to the lobby where you can only join Independent and killing anyone is allowed.</English>
 		</Key>
 		<Key ID="STR_WL_Loading_Teamswitched">
-			<English>You have played as %1 for too long and cannot switch to the other team. You can still play as Independent.</English>
+			<English>You have played as %1 for too long and cannot switch to the other team. You can still play as Independent. (or if online, ask an admin to unlock you)</English>
 		</Key>
 	</Package>
 	<Package name="Gameplay">
@@ -38,16 +38,16 @@
 	</Package>
 	<Package name="WelcomeMessage">
 		<Key ID="STR_WL_WelcomeToWasteland">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Welcome to GoT Wasteland&lt;t color='#FFFFFF' size='1' &gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;GoT Wasteland&lt;t color='#FFFFFF' size='1' &gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server will be restarted when needed.&lt;br/&gt;* You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server will be restarted when needed.&lt;br/&gt;* You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server will be restarted when needed.&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;* You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;* You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE.&lt;/t&gt;&lt;br/&gt;* No VOIP/VON in GLOBAL&lt;br/&gt;* Server will be restarted when needed.&lt;/t&gt;</English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Welcome to GoT Wasteland. &lt;br/&gt;Please report all bugs/problems to http://github.com/JoSchaap/GoT_Wasteland-Stratis-Full&lt;br/&gt;Server will be restarted on request.&lt;br/&gt;For more info please see the map&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Report bugs/problems to http://github.com/JoSchaap/GoT_Wasteland-Stratis-Full&lt;br/&gt;Server will be restarted on request.&lt;br/&gt;For more info please see the map&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
@@ -111,7 +111,7 @@
 	</Package>
 	<Package name="Dialogs">
 		<Key ID="STR_WL_dialog_TeamkillText">
-			<English>You where team-killed by %2 player %1.&lt;br/&gt;&lt;br/&gt;If this was an accident then forgive them, otherwise they should explain their actions.&lt;br/&gt;&lt;br/&gt;If the player does not explain why then select Punish or Announce.</English>
+			<English>You got team-killed by %2 player %1.&lt;br/&gt;&lt;br/&gt;If this was an accident then forgive them, otherwise they should explain their actions.&lt;br/&gt;&lt;br/&gt;If the player does not explain why then select Punish or Announce.</English>
 		</Key>
 	</Package>
 	<Package name="Actions">

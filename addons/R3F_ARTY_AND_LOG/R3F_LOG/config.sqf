@@ -21,11 +21,12 @@ R3F_LOG_CFG_remorqueurs = [
 R3F_LOG_CFG_objets_remorquables = [
 	"c_offroad",
 	"O_Ifrit_MG_F",
-    "B_Hunter_F",
-    "B_Hunter_RCWS_F",
-    "B_Hunter_HMG_F",
-    "O_Ifrit_F",
-    "O_Ifrit_GMG_F"
+	"B_Hunter_F",
+	"B_Hunter_RCWS_F",
+	"B_Hunter_HMG_F",
+	"O_Ifrit_F",
+	"O_Ifrit_GMG_F",
+	"Land_Cargo20_Military_F"
 ];
 
 /****** LIFT WITH VEHICLE / HELIPORTER AVEC VEHICULE ******/
@@ -53,8 +54,7 @@ R3F_LOG_CFG_objets_heliportables = [
     	"B_Hunter_HMG_F",
     	"O_Ifrit_F",
     	"O_Ifrit_GMG_F",
-    	"Land_Cargo_House_V1_F",
-    	"Land_Cargo_House_V2_F"
+    	"Land_Cargo20_Military_F"
 ];
 
 
@@ -74,6 +74,7 @@ R3F_LOG_CFG_transporteurs = [
 	["O_Ka60_F", 10],
     	["O_Quadbike_F", 5],
     	["B_Quadbike_F", 5],
+	["Land_Cargo20_military_F", 30],
 	["B_AH9_F", 10]
 ];
 
@@ -86,16 +87,15 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Box_NATO_Wps_F", 5],
 	["Box_NATO_WpsSpecial_F", 5],
 	["Land_CanisterPlastic_F", 1],
-	["Land_Fireplace_F", 3],
 	["Land_Sacks_goods_F", 2],
 	["Land_MetalBarrel_F", 2],
 	["Land_HBarrierBig_F", 5],
 	["Land_HBarrier_3_F", 3],
     	["Land_HBarrier_5_F", 5],
-	["Land_CargoBox_V1_F", 2],
+    	["Land_HBarrier_1_F", 1],
     	["O_Quadbike_F", 10],
     	["B_Quadbike_F", 10],
-	["Land_LampHalogen_F", 5],
+	["Land_LampDecor_F", 5],
 	["Land_ToiletBox_F", 5]
 ];
 
@@ -109,17 +109,15 @@ R3F_LOG_CFG_objets_deplacables = [
 	"Box_NATO_Wps_F",
 	"Box_NATO_WpsSpecial_F",
 	"Land_CanisterPlastic_F",
-	"Land_Fireplace_F",
 	"Land_Sacks_goods_F",
 	"Land_MetalBarrel_F",
 	"Land_HBarrierBig_F",
+	"Land_HBarrier_1_F",
 	"Land_HBarrier_3_F",
     	"Land_HBarrier_5_F",
-	"Land_CargoBox_V1_F",
+	"Land_Cargo20_military_F",
     	"O_Quadbike_F",
     	"B_Quadbike_F",
-    	"Land_Cargo_House_V1_F",
-    	"Land_Cargo_House_V2_F",
-	"Land_LampHalogen_F",
+	"Land_LampDecor_F",
 	"Land_ToiletBox_F"
 ];

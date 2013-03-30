@@ -86,9 +86,10 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"1.08(GoT)",
+"1.08b(GoT)",
 "
 <br/>
+		*Revision:a*<br/>
 		[Added] New main mission (Convoy) By Sanjo.<br/>
 		[Added] MiniConvoy Sidemission (JoSchaap) Original by Sanjo<br/>
 		[Added] Posibility to move and airlift small bunkers<br/>
@@ -101,6 +102,22 @@ player createDiaryRecord["changelog",
 		[Fixed] Ifrit spawn and mission issue's<br/>
 		[Fixed] Vehicle content window missing an image/icon<br/>
 		[Fixed] Admin-Provinggrounds missing an image/icon<br>
+		<br/>
+		*Revision:b*<br/>
+		[Added] More variaty of basebuilding parts (+new parts!)<br/>
+		[Added] 20mm and 40mm flare rounds to Gunstore<br/>
+		[Added] You can study and build improvised roofs!<br/>
+		[Added] Cargo Containers with 30slots space for parts<br/>
+		[Changed] Cargo Containers can only be Towed or airlifted!<br/>
+		[Changed] Lamp-class for basebuilding due to placement bugs<br/>
+		[Changed] Significantly increased the ammount of spawned objects<br/>
+		[Fixed] Font errors on some rare occasions<br/>
+		[Fixed] Desync issues<br/>
+		[Fixed] Bug that enabled players to take map-bound objects (caused desync)<br/>
+		[Fixed] Typo's in stringtables<br/>
+		[Fixed] Dropping food and water through playermenu<br/>
+		[Removed] The metal bunker can no longer be used for basebuilding<br/>
+		[Removed] Funtionality to drop your Jerrycan (doesnt work in arma3)<br/>
 		<br/>
 "
 ]
@@ -116,8 +133,13 @@ player createDiaryRecord["404games",
 	Costlyy<br/>
 	Pulse<br/>
 	Domuk<br/>
-	*Sanjo<br/>
+	<br/>
+	Others:<br/>
+	*Sanjo (GitHub)<br/>
 	<br/>*Convoy MainMission<br/>
+	*Tonic-_- (BIS-forums)<br/>
+	*helped disabling r3f on mapbound items<br/>
+	<br/>
 "
 ]
 ];
@@ -148,7 +170,7 @@ player createDiaryRecord["GoT2DayZ",
 "Contact Admin",
 "
 <br/>
-	The server owner can add his own admin information here<br/>
+	The Server Hoster can provide admin info here! <br/>
 
 "
 ]
@@ -159,9 +181,9 @@ player createDiaryRecord["GoT2DayZ",
 "Credits",
 "
 <br/>
-	Mod editting:<br/><br/>
-	-JoSchaap<br/>
-	-Anyone who files issues or pull requests on the GiT's<br/>
+	Hosting and mod edits:<br/><br/>
+	JoSchaap<br/>
+	Anyone who files issues or pull requests on the GiT's<br/>
 "
 ]
 ];

@@ -1,7 +1,6 @@
 respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
-//disableChannels[]={2};
 enableItemsDropping = 0;
 loadScreen = "Loading.jpg";
 class Header
@@ -10,7 +9,7 @@ class Header
 	minPlayers=1;
 	maxPlayers=65;
 };
-OnLoadMission = "GoT Wasteland v:1.08 [FullyFunctional|JoSchaap]";
+OnLoadMission = "GoT Wasteland v:1.08 Revision:b [GoT/JoSchaap]";
 //Dialog includes
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 #include "client\systems\common.hpp"
