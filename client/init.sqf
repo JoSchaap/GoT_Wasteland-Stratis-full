@@ -65,16 +65,19 @@ waituntil {!(IsNull (findDisplay 46))};
 if (isNil "FZF_IC_INIT") then   {
 	call compile preprocessFileLineNumbers "client\functions\newPlayerIcons.sqf";
 };
-//Disable r3f on map/mission sided buildings (causes desync when moved)
-//props to Tonic-_- at the BIS forums for this find! :)
-waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
-{
-    if(!(_x in (allMissionObjects "Building"))) then
-    {
-        _x setVariable["R3F_LOG_disabled",true];
-    };
-} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
 
-sleep 1;
+if (!isDedicated) then {
+	//Disable r3f on map/mission sided buildings (causes desync when moved)
+	//props to Tonic-_- at the BIS forums for this find! :)
+	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
+	{
+    	if(!(_x in (allMissionObjects "Building"))) then
+    	{
+	        _x setVariable["R3F_LOG_disabled",true];
+    	};
+	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
+}
+
+sleep 0.1;
 true spawn playerSpawn;
 [] spawn FZF_IC_INIT;
