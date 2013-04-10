@@ -115,7 +115,9 @@ if(_failed) then
 {
     // Mission failed
     {deleteVehicle _x;}forEach units _groupsm; //despawn troops
-    deleteGroup _groupsm;
+    {deleteVehicle _x;}forEach vehicles _groupsm; //despawn vehicles
+    sleep 0.2;
+    deleteGroup _groupsm;    
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
     messageSystem = _hint;
     if (!isDedicated) then { call serverMessage };
@@ -128,8 +130,6 @@ if(_failed) then
     clearMagazineCargoGlobal _ammobox;
     clearWeaponCargoGlobal _ammobox; 
     [_ammobox,"mission_Side_USSpecial"] call fn_refillbox;
-    _ammobox addMagazine ["HandGrenade", 2];
-    
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The convoy has been sucessfully stopped. Now the weapons and cars are yours.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
     messageSystem = _hint;
     if (!isDedicated) then { call serverMessage };
