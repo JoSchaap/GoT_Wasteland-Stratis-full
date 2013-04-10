@@ -86,7 +86,7 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"1.08b(GoT)",
+"1.08d(GoT)",
 "
 <br/>
 		*Revision:a*<br/>
@@ -119,6 +119,17 @@ player createDiaryRecord["changelog",
 		[Removed] The metal bunker can no longer be used for basebuilding<br/>
 		[Removed] Funtionality to drop your Jerrycan (doesnt work in arma3)<br/>
 		<br/>
+		*Revision:d<br/>
+		[Added] Different reward crates for the convoy mainmissions<br/>
+		[Added] New objects to the list of basebuilding parts<br/>
+		[Added] Sanjo's mission selection system to prevent recurring missions (Thanks Sanjo!)<br/>
+		[Changed] Weapon and item prizes in the gunstore to be more realistic<br/>
+		[Changed] Some of the baseparts that kept falling over<br/>
+		[Changed] R3F Logisitics checks on client and server init (caused long waiting times)<br/>
+		[Fixed] Flare rounds in gunstore not possible to buy<br/>
+		[Fixed] AI and Vehicles from convoy missions not despawning<br/>
+		[Fixed] Moving objects causes loss off attachments on primary weapons<br/>
+		<br/>
 "
 ]
 ];
@@ -149,12 +160,11 @@ player createDiaryRecord["GoT2DayZ",
 "Who what where?",
 "
 <br/>
-	What is GoT2DayZ and why are you hosting Arma3?<br/><br/>
-	GoT2DayZ was initially founded as a player-base for the dutch Tweakers.NET Community<br/>
+	What is GoT/GoT2DayZ?<br/><br/>
+	GoT2DayZ was initially founded as a DayZ player-base for the dutch Tweakers.NET Community<br/>
 	However as time passed on we also started playing wasteland on arma2.<br/>
-	Now with arma3 also having wasteland, we run 3 publics and 1 private server.<br/>
-	<br/><br/>
-	* DayZ Chernarus (Private/Passworded) with safezone<br/>
+	Now with arma3 also having wasteland, we run some public servers.<br/>
+	<br/>site: www.got2dayz.nl<br/>
 	* DayZ Celle (Whitelisted)<br/>
 	* ArmA2 Wasteland on Utes (Customized by us)<br/>
 	* ArmA3 Alpha Wasteland on Stratis (Costomized by us)<br/>
