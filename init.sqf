@@ -13,7 +13,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v1.08b";
+versionName = "GoT Wasteland v1.08d";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
