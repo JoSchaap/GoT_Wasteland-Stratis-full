@@ -60,17 +60,18 @@ armedMilitaryVehicles = ["B_Hunter_F","O_Ifrit_F"];
 objectList = ["Land_Sacks_goods_F",
 			"Land_HBarrierBig_F",
 			"Land_HBarrier_5_F",
+			"Land_JunkPile_F",
 			"Land_HBarrier_1_F",
-			"Land_Mil_WallBig_4m_F",
+			"Land_Tyres_F",
 			"Land_CanisterPlastic_F",
 			"Land_MetalBarrel_F",
 			"Land_HBarrierBig_F",
 			"Land_HBarrier_3_F",
-			"Land_LampDecor_F",
-			"Land_Cargo20_military_F",
+			"Land_Coil_F",
+			"Land_cargo_addon02_V2_F",
 			"Land_HBarrierBig_F",
-			"Land_Mil_WallBig_4m_F",
-			"Land_cargo_addon02_v2_F"];
+			"Land_Pipes_Large_F",
+			"Land_CargoBox_V1_F"];
                                          
 //Object List - Random Spawns.
 staticWeaponsList = ["B_MK6"];
