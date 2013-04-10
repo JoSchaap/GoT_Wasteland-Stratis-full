@@ -29,7 +29,7 @@ if (isDedicated) then {
 	        _x setVariable["R3F_LOG_disabled",true];
     	};
 	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
-}
+};
 
 diag_log format["WASTELAND SERVER - Server Complie Finished"];
 
