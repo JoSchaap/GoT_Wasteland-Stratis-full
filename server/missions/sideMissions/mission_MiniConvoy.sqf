@@ -114,8 +114,9 @@ waitUntil
 if(_failed) then
 {
     // Mission failed
-    {deleteVehicle _x;} forEach units _groupsm; //despawn troops
-    {deleteVehicle _vehicle;} forEach _vehicles _groupsm; //despawn vehicles
+    deleteVehicle _vehicle;
+    {deleteVehicle _x;}forEach units _groupsm; 
+	deleteGroup _groupsm; 
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
     messageSystem = _hint;
     if (!isDedicated) then { call serverMessage };
