@@ -2,6 +2,7 @@
 //  @file Name: createRadarMarkers.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy, [GoT] JoSchaap
 //	@file Args:
+// 	just an idea.. not worked out yet
 
 _radius = 300;
 _status = [];
