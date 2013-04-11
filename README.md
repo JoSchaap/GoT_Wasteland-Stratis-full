@@ -49,16 +49,21 @@ Changelog
 -Revision:c-<br/>
 [Notice] revision c was skipped due to version confusion with the stripped-edition<br/>
 -Revision:d-<br/>
-[Added] Different reward crates for the convoy mainmissions<br/>
+[Added] Different reward crate contents for the convoys<br/>
 [Added] New objects to the list of basebuilding parts<br/>
 [Added] Sanjo's mission selection system to prevent recurring missions (Thanks Sanjo!)<br/>
+[Added] Mission information and author info to the splash screen<br/>
+[Added] Gunstore radars are back!<br/>
+[Added] Radar detection area's to radar-sites (like te airfield, mike and some bases)<br/>
 [Changed] Weapon and item prizes in the gunstore to be more realistic<br/>
 [Changed] Some of the baseparts that kept falling over<br/>
-[Changed] R3F Logisitics checks on client and server init (caused long waiting times)<br/>
+[Changed] Logisitic checks on client and server init (caused long waiting times)<br/>
 [Fixed] Flare rounds in gunstore not possible to buy<br/>
 [Fixed] AI and Vehicles from convoy missions not despawning<br/>
-[Fixed] Moving objects causes loss off attachments on primary weapons<br/>
-<br/>
+[Fixed] Moving objects around causes loss off weapon attachments<br/>
+[Fixed] Slow respawn dialog on first spawn<br/>
+[Removed] Some more GoT2DayZ.nl references where removed<br/>
+
 Please be reminded that i did NOT create this mission from scratch, most of the work has been done by the awesome DEV-team @ 404Games. Im just the huy that had some spare time to make it work in ArmA3Alpha :)
 
 All credit are still due to them and not me
