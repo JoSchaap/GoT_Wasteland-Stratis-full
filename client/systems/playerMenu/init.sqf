@@ -36,7 +36,8 @@ _mIndex = _mvalue lbadd "$3000"; _mvalue lbSetData [(lbSize _mvalue)-1, "3000"];
 _mIndex = _mvalue lbadd "$4000"; _mvalue lbSetData [(lbSize _mvalue)-1, "4000"];
 _mIndex = _mvalue lbadd "$5000"; _mvalue lbSetData [(lbSize _mvalue)-1, "5000"];
 
-if(str(playerSide) == "west" || str(playerSide) == "east") then
-{
-	_groupButton ctrlShow false;    
-};
+//  enabled groups for bluefor/opfor for sthud usage (uncomment this to undo it) - JoSchaap
+// if(str(playerSide) == "west" || str(playerSide) == "east") then
+// {
+// 	_groupButton ctrlShow false;    
+// };
