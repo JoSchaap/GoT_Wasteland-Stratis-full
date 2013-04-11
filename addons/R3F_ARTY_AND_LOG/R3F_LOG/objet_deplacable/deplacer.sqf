@@ -60,7 +60,7 @@ else
 		_arme_principale = primaryWeapon player;
 		if (_arme_principale != "") then
 		{
-			{_weapitems = PrimaryWeaponItems _arme_principale;}foreach PrimaryWeaponItems _arme_principale;
+// [givin up someone feel free to help out..]	{_weapitems = PrimaryWeaponItems _arme_principale;}foreach PrimaryWeaponItems _arme_principale;
 			player playMove "AidlPercMstpSnonWnonDnon04";
 			sleep 1;
 			player removeWeapon _arme_principale;
@@ -177,10 +177,10 @@ else
 					_o addWeaponCargoGlobal [_arme_principale, 1];
 				} else {
 					player addWeapon _arme_principale;
-					if (!isnill _weapitems) then
-					{
-						_arme_principale addPrimaryWeaponItem _x;
-					} foreach _weapitems;
+// [givin up someone feel free to help out..]						if (!isnill _weapitems) then
+// [givin up someone feel free to help out..]						{
+// [givin up someone feel free to help out..]							_arme_principale addPrimaryWeaponItem _x;
+// [givin up someone feel free to help out..]						} foreach _weapitems;
 					player selectWeapon _arme_principale;
 					player selectWeapon (getArray (configFile >> "cfgWeapons" >> _arme_principale >> "muzzles") select 0);
 				};
