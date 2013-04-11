@@ -26,7 +26,7 @@ else
 	
 	R3F_LOG_objet_selectionne = objNull;
 	
-	private ["_objet", "_est_calculateur", "_arme_principale", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon","_weapitems"];
+	private ["_objet", "_est_calculateur", "_arme_principale", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_weapitems"];
 	
 	_objet = _this select 0;
 	if(isNil {_objet getVariable "R3F_Side"}) then {
@@ -60,12 +60,9 @@ else
 		_arme_principale = primaryWeapon player;
 		if (_arme_principale != "") then
 		{
-			if (!isnill PrimaryWeaponItems player) then
-			{
-				_weapitems = PrimaryWeaponItems player;
-			} foreach PrimaryWeaponItems player;
+			{_weapitems = PrimaryWeaponItems _arme_principale;}foreach PrimaryWeaponItems _arme_principale;
 			player playMove "AidlPercMstpSnonWnonDnon04";
-			sleep 1.5;
+			sleep 1;
 			player removeWeapon _arme_principale;
 		}
 		else {sleep 0.5;};
@@ -182,7 +179,7 @@ else
 					player addWeapon _arme_principale;
 					if (!isnill _weapitems) then
 					{
-						player addPrimaryWeaponItem _x;
+						_arme_principale addPrimaryWeaponItem _x;
 					} foreach _weapitems;
 					player selectWeapon _arme_principale;
 					player selectWeapon (getArray (configFile >> "cfgWeapons" >> _arme_principale >> "muzzles") select 0);
