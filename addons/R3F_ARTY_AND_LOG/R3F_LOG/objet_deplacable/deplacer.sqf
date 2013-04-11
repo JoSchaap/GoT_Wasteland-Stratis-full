@@ -126,7 +126,7 @@ else
 				{
 					player globalChat STR_R3F_LOG_courir_trop_vite;
 
-					if((currentWeapon player) in ["M9", "M9SD", "Colt1911", "Makarov", "MakarovSD", "Sa61_EP1", "UZI_EP1", "UZI_SD_EP1", "revolver_EP1", "revolver_gold_EP1", "glock17_EP1"])
+					if((currentWeapon player) in ["hgun_P07_F","hgun_rook40_F","M9", "M9SD", "Colt1911", "Makarov", "MakarovSD", "Sa61_EP1", "UZI_EP1", "UZI_SD_EP1", "revolver_EP1", "revolver_gold_EP1", "glock17_EP1"])
 					then {player playMove "amovpercmstpsraswpstdnon_amovppnemstpsraswpstdnon";} else {player playMove "AmovPpneMstpSnonWnonDnon"};
 
 					sleep 1;
