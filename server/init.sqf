@@ -19,17 +19,6 @@ _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 [] execVM "server\functions\serverTimeSync.sqf";
 waitUntil{scriptDone _serverCompiledScripts};
 
-//Disable r3f on map/mission sided buildings (causes desync when moved)
-//props to Tonic-_- at the BIS forums for this find! :)
-if (isDedicated) then {
-	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
-	{
-    	if(!(_x in (allMissionObjects "Building"))) then
-    	{
-	        _x setVariable["R3F_LOG_disabled",true];
-    	};
-	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
-};
 
 diag_log format["WASTELAND SERVER - Server Complie Finished"];
 
