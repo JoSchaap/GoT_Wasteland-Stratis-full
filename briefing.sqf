@@ -129,6 +129,7 @@ player createDiaryRecord["changelog",
 		[Changed] Weapon and item prizes in the gunstore to be more realistic<br/>
 		[Changed] Some of the baseparts that kept falling over<br/>
 		[Changed] Logisitic checks on client and server init (caused long waiting times)<br/>
+		[Changed] Enabled groups in Blufor/Opfor for STHUD users<br/>
 		[Fixed] Flare rounds in gunstore not possible to buy<br/>
 		[Fixed] AI and Vehicles from convoy missions not despawning<br/>
 		[Fixed] Moving objects around causes loss off weapon attachments<br/>
