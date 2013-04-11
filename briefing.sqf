@@ -119,16 +119,19 @@ player createDiaryRecord["changelog",
 		[Removed] The metal bunker can no longer be used for basebuilding<br/>
 		[Removed] Funtionality to drop your Jerrycan (doesnt work in arma3)<br/>
 		<br/>
-		*Revision:d<br/>
-		[Added] Different reward crates for the convoy mainmissions<br/>
+		*Revision:d (c was skipped intentionally)<br/>
+		[Added] Different reward crate contents for the convoys<br/>
 		[Added] New objects to the list of basebuilding parts<br/>
 		[Added] Sanjo's mission selection system to prevent recurring missions (Thanks Sanjo!)<br/>
+		[Added] Mission information and author info to the splash screen<br/>
 		[Changed] Weapon and item prizes in the gunstore to be more realistic<br/>
 		[Changed] Some of the baseparts that kept falling over<br/>
-		[Changed] R3F Logisitics checks on client and server init (caused long waiting times)<br/>
+		[Changed] Logisitic checks on client and server init (caused long waiting times)<br/>
 		[Fixed] Flare rounds in gunstore not possible to buy<br/>
 		[Fixed] AI and Vehicles from convoy missions not despawning<br/>
-		[Fixed] Moving objects causes loss off attachments on primary weapons<br/>
+		[Fixed] Moving objects around causes loss off weapon attachments<br/>
+		[Fixed] Slow respawn dialog on first spawn<br/>
+		[Removed] Some more GoT2DayZ.nl references where removed<br/>
 		<br/>
 "
 ]
@@ -146,9 +149,10 @@ player createDiaryRecord["404games",
 	Domuk<br/>
 	<br/>
 	Others:<br/>
-	*Sanjo (GitHub)<br/>
-	<br/>*Convoy MainMission<br/>
-	*Tonic-_- (BIS-forums)<br/>
+	Sanjo (GitHub)<br/>
+	*Mission-Selector<br/>
+	*Convoy MainMission<br/><br/>
+	Tonic-_- (BIS-forums)<br/>
 	*helped disabling r3f on mapbound items<br/>
 	<br/>
 "
@@ -161,15 +165,17 @@ player createDiaryRecord["GoT2DayZ",
 "
 <br/>
 	What is GoT/GoT2DayZ?<br/><br/>
-	GoT2DayZ was initially founded as a DayZ player-base for the dutch Tweakers.NET Community<br/>
-	However as time passed on we also started playing wasteland on arma2.<br/>
+	GoT2DayZ started as a DayZ player-base for Tweakers.Net members<br/>
+	As time passed on we also started playing wasteland on arma2.<br/>
 	Now with arma3 also having wasteland, we run some public servers.<br/>
-	<br/>site: www.got2dayz.nl<br/>
+	And also modify Wasteland missions for them.<br/>
+	<br/>Our website: www.got2dayz.nl<br/><br>
+	our servers:<br/>
 	* DayZ Celle (Whitelisted)<br/>
 	* ArmA2 Wasteland on Utes (Customized by us)<br/>
 	* ArmA3 Alpha Wasteland on Stratis (Costomized by us)<br/>
 	<br/>
-	I cant urge enough that all credits for this mission go to the original makers at 404Games!<br/>
+	I cant urge enough that all credits for this mission go to the original makers at 404Games.co.uk!<br/>
 	<br/>
 "
 ]
@@ -191,9 +197,11 @@ player createDiaryRecord["GoT2DayZ",
 "Credits",
 "
 <br/>
-	Hosting and mod edits:<br/><br/>
-	JoSchaap<br/>
-	Anyone who files issues or pull requests on the GiT's<br/>
+	Wasteland Middion edit-credits:<br/><br/>
+	-JoSchaap<br/>
+	-Sanjo<br/>
+	-Tonic-_-<br/>
+	-Anyone who files issues or pull requests on the GiT's<br/>
 "
 ]
 ];
