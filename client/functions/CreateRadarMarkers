@@ -34,7 +34,7 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
     _markerName setMarkerTypeLocal "mil_dot";
     _markerName setMarkerColorLocal "ColorRed";
 	_markerName setMarkerSizeLocal [1,1];
-	_markerName setMarkerTextLocal "GUN-STORE";
+	_markerName setMarkerTextLocal "RADAR-SITE";
 
 	// Gun store description    
     _markerName = format["marker_shop_desc_%1",_x];
