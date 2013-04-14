@@ -125,8 +125,9 @@ player createDiaryRecord["changelog",
 		[Added] Sanjo's mission selection system to prevent recurring missions (Thanks Sanjo!)<br/>
 		[Added] Mission information and author info to the splash screen<br/>
 		[Added] Gunstore radars are back!<br/>
-		[Added] Radar detection area's to radar-sites (like te airfield, mike and some bases)<br/>
+		[Added] New side mission Hostile Helicopter<br/>
 		[Changed] Weapon and item prizes in the gunstore to be more realistic<br/>
+		[Changed] Backpacks are now removed from players when killed<br/>
 		[Changed] Some of the baseparts that kept falling over<br/>
 		[Changed] Logisitic checks on client and server init (caused long waiting times)<br/>
 		[Changed] Enabled groups in Blufor/Opfor for STHUD users<br/>

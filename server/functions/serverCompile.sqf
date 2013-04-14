@@ -28,6 +28,8 @@ mission_SupplyDrop = compile preprocessFileLineNumbers "server\missions\mainMiss
 mission_AirWreck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_AirWreck.sqf";
 mission_WepCache = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_WepCache.sqf";
 mission_MiniConvoy = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_MiniConvoy.sqf";
+mission_HostileHelicopter = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_HostileHelicopter.sqf";
+
 /*
 mission_Truck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_Truck.sqf";
 mission_ReconVeh = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_ReconVeh.sqf";

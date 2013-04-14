@@ -13,7 +13,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v1.08d(TEST!)";
+versionName = "GoT Wasteland v1.08(d)";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -21,7 +21,7 @@ if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Welcome to Wasteland, Have patience dear Padawan!", "BLACK", 0];
+		titleText ["Welcome to GoT Wasteland, Have patience dear Padawan!", "BLACK", 0];
 		waitUntil {player == player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
