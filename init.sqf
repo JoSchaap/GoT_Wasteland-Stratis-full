@@ -13,7 +13,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "GoT Wasteland v1.08b";
+versionName = "GoT Wasteland v1.08(d)";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -21,7 +21,7 @@ if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Have patience dear Padawan!", "BLACK", 0];
+		titleText ["Welcome to GoT Wasteland, Have patience dear Padawan!", "BLACK", 0];
 		waitUntil {player == player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
@@ -52,4 +52,26 @@ if(X_Server) then {
 
 //init 3rd Party Scripts
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
+
+//Disable r3f on map/mission sided buildings (causes desync when moved)
+//props to Tonic-_- at the BIS forums for this find! :)
+if (isServer) then {
+	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
+	{
+    	if(!(_x in (allMissionObjects "Building"))) then
+    	{
+	        _x setVariable["R3F_LOG_disabled",true];
+    	};
+	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
+};
+if (!isDedicated) then {
+	waitUntil {!isNil {R3F_LOG_CFG_objets_deplacables}};
+	{
+    	if(!(_x in (allMissionObjects "Building"))) then
+    	{
+	        _x setVariable["R3F_LOG_disabled",true];
+    	};
+	} foreach (nearestObjects[[0,0], R3F_LOG_CFG_objets_deplacables, 20000]); 
+};
+
 [] execVM "addons\proving_Ground\init.sqf";

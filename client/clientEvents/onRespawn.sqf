@@ -9,6 +9,9 @@ playerSetupComplete = false;
 
 _player = (_this select 0) select 0;
 _corpse = (_this select 0) select 1;
+//diag_log (unitBackpack _corpse);
+//clearMagazineCargoGlobal (unitBackpack _corpse);
+//removeBackpack _corpse;
 _corpse removeAction playerMenuId;
 {
 	_corpse removeAction _x;

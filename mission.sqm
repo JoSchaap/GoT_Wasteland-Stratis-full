@@ -27,8 +27,8 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v1.08b (GoT/JoSchaap)";
-		briefingDescription="GoT (Complete Edition) Wasteland Survival Sandbox - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
+		briefingName="GoT Wasteland v1.08(d) (GoT/JoSchaap)";
+		briefingDescription="GoT (Complete-Edition) Wasteland Survival Sandbox - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.40000001;
 		startWind=0.3;

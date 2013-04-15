@@ -25,8 +25,7 @@ R3F_LOG_CFG_objets_remorquables = [
 	"B_Hunter_RCWS_F",
 	"B_Hunter_HMG_F",
 	"O_Ifrit_F",
-	"O_Ifrit_GMG_F",
-	"Land_Cargo20_Military_F"
+	"O_Ifrit_GMG_F"
 ];
 
 /****** LIFT WITH VEHICLE / HELIPORTER AVEC VEHICULE ******/
@@ -53,8 +52,7 @@ R3F_LOG_CFG_objets_heliportables = [
     	"B_Hunter_RCWS_F",
     	"B_Hunter_HMG_F",
     	"O_Ifrit_F",
-    	"O_Ifrit_GMG_F",
-    	"Land_Cargo20_Military_F"
+    	"O_Ifrit_GMG_F"
 ];
 
 
@@ -63,18 +61,17 @@ R3F_LOG_CFG_objets_heliportables = [
 
 R3F_LOG_CFG_transporteurs = [
 	["c_offroad", 30],
-	["O_Ifrit_MG_F", 20],
-	["B_Hunter_F", 20],
-	["B_Hunter_RCWS_F", 20],
-	["B_Hunter_HMG_F", 20],
-	["O_Ifrit_F", 20],
-	["O_Ifrit_GMG_F", 20],
-	["O_Ka60_Unarmed_F", 10],
+	["O_Ifrit_MG_F", 25],
+	["B_Hunter_F", 25],
+	["B_Hunter_RCWS_F", 25],
+	["B_Hunter_HMG_F", 25],
+	["O_Ifrit_F", 25],
+	["O_Ifrit_GMG_F", 25],
+	["O_Ka60_Unarmed_F", 20],
 	["B_MH9_F", 10],
-	["O_Ka60_F", 10],
+	["O_Ka60_F", 20],
     	["O_Quadbike_F", 5],
     	["B_Quadbike_F", 5],
-	["Land_Cargo20_military_F", 30],
 	["B_AH9_F", 10]
 ];
 
@@ -90,14 +87,17 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Land_Sacks_goods_F", 2],
 	["Land_MetalBarrel_F", 2],
 	["Land_HBarrierBig_F", 5],
-	["Land_Mil_WallBig_4m_F",5],
+	["Land_ToiletBox_F", 6],
+	["Land_JunkPile_F",3],
 	["Land_HBarrier_3_F", 3],
     	["Land_HBarrier_5_F", 5],
     	["Land_HBarrier_1_F", 1],
     	["O_Quadbike_F", 10],
     	["B_Quadbike_F", 10],
-	["Land_LampDecor_F", 5],
-	["Land_ToiletBox_F", 5]
+	["Land_Tyres_F", 3],
+	["Land_Coil_F", 5],
+	["Land_Pipes_Large_F", 5],
+	["Land_CargoBox_V1_F", 5]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -113,13 +113,15 @@ R3F_LOG_CFG_objets_deplacables = [
 	"Land_Sacks_goods_F",
 	"Land_MetalBarrel_F",
 	"Land_HBarrierBig_F",
+	"Land_ToiletBox_F",
 	"Land_HBarrier_1_F",
 	"Land_HBarrier_3_F",
     	"Land_HBarrier_5_F",
-	"Land_Cargo20_military_F",
-	"Land_Mil_WallBig_4m_F",
+	"Land_Tyres_F",
+	"Land_JunkPile_F",
     	"O_Quadbike_F",
     	"B_Quadbike_F",
-	"Land_LampDecor_F",
-	"Land_ToiletBox_F"
+	"Land_Coil_F",
+	"Land_Pipes_Large_F",
+	"Land_CargoBox_V1_F"
 ];
