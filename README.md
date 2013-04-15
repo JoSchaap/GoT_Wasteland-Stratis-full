@@ -51,17 +51,19 @@ Changelog
 -Revision:d-<br/>
 [Added] Different reward crate contents for the convoys<br/>
 [Added] New objects to the list of basebuilding parts<br/>
-[Added] Sanjo's mission selection system to prevent recurring missions (Thanks Sanjo!)<br/>
-[Added] Mission information and author info to the splash screen<br/>
+[Added] Sanjo's mission select (prevents recurring missions)<br/>
+[Added] Mission intel and author info to the splash screen<br/>
 [Added] Gunstore radars are back!<br/>
-[Added] Radar detection area's to radar-sites (like te airfield, mike and some bases)<br/>
-[Changed] Weapon and item prizes in the gunstore to be more realistic<br/>
-[Changed] Some of the baseparts that kept falling over<br/>
-[Changed] Logisitic checks on client and server init (caused long waiting times)<br/>
-[Changed] Enabled groups in Blufor/Opfor for STHUD users<br/>
+[Added] New side mission Hostile Helicopter<br/>
+[Added] New main mission Hostile Helicopter-Squad<br/>
+[Changed] Weapon and item prizes in the gunstore<br/>
+[Changed] death sequence when killed<br/>
+[Changed] baseparts that kept falling over<br/>
+[Changed] reduced the spawn of foodsacks/watercanisters (life sux)</br/>
+[Changed] Logisitic checks on init (caused long waiting times/lag)<br/>
+[Changed] Enabled groups in Blufor/Opfor <br/>
 [Fixed] Flare rounds in gunstore not possible to buy<br/>
 [Fixed] AI and Vehicles from convoy missions not despawning<br/>
-[Fixed] Moving objects around causes loss off weapon attachments<br/>
 [Fixed] Slow respawn dialog on first spawn<br/>
 [Removed] Some more GoT2DayZ.nl references where removed<br/>
 
