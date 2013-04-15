@@ -4,8 +4,14 @@ GoT_Wasteland-Stratis (Full) v1.08 (Revision:d)
 All credits for Wasteland go to 404Games and their DEV's
 This is just my alteration.
 
-current status: v1.08d (Complete Edition)
-current status: v1.08d (Stripped Edition) only if fixes apply to it
+current status: v1.08(d) (Complete Edition)
+current status: v1.08(d) (Stripped Edition) only if fixes apply to it
+
+If you are not famillair with creating PBO files, grab the ready-to-go-PBO here: 
+https://github.com/JoSchaap/Arma3_Binary_PBO
+
+before creating a .PBO make sure the foldername ends with YOURMISSIONFOLDERNAME.Stratis
+
 
 Changelog
 =========
