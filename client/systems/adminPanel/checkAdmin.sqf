@@ -18,7 +18,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	};
     if ((_uid in serverAdministrators)) then {
 		execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
-        hint "Welcome Owner";		
+        hint "JoSchaap wuz Here!";		
 	};	
 } else {
     sleep 1;

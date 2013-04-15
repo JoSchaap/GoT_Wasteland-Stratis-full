@@ -86,15 +86,15 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"1.08b(GoT)",
+"1.08d(GoT)",
 "
 <br/>
 		*Revision:a*<br/>
 		[Added] New main mission (Convoy) By Sanjo.<br/>
-		[Added] MiniConvoy Sidemission (JoSchaap) Original by Sanjo<br/>
+		[Added] MiniConvoy Sidemission (JoSchaap) Tnx Sanjo<br/>
 		[Added] Posibility to move and airlift small bunkers<br/>
-		[Added] More interesting baseparts to be taken from all over the map<br/>
-		[Added] Food,Water,Fuel sources asswell as the refuel option<br/>
+		[Added] More baseparts to be taken from all over the map<br/>
+		[Added] Food,Water,Fuel sources and the refuel option<br/>
 		[Fixed] Fixed misc font errors.<br/>
 		[Fixed] one of the weap boxes could not be moved.<br/>
 		[Fixed] Survival system now active again!<br/>
@@ -110,14 +110,32 @@ player createDiaryRecord["changelog",
 		[Added] Cargo Containers with 30slots space for parts<br/>
 		[Changed] Cargo Containers can only be Towed or airlifted!<br/>
 		[Changed] Lamp-class for basebuilding due to placement bugs<br/>
-		[Changed] Significantly increased the ammount of spawned objects<br/>
+		[Changed] Significantly increased the ammount of objects<br/>
 		[Fixed] Font errors on some rare occasions<br/>
 		[Fixed] Desync issues<br/>
-		[Fixed] Bug that enabled players to take map-bound objects (caused desync)<br/>
+		[Fixed] Bug that enabled players to take map-bound objects<br/>
 		[Fixed] Typo's in stringtables<br/>
 		[Fixed] Dropping food and water through playermenu<br/>
-		[Removed] The metal bunker can no longer be used for basebuilding<br/>
-		[Removed] Funtionality to drop your Jerrycan (doesnt work in arma3)<br/>
+		[Removed] The metal bunker for basebuilding<br/>
+		[Removed] Funtionality to drop your Jerrycan (not in arma3)<br/>
+		<br/>
+		*Revision:d (c was skipped intentionally)<br/>
+		[Added] Different reward crate contents for the convoys<br/>
+		[Added] New objects to the list of basebuilding parts<br/>
+		[Added] Sanjo's mission select (prevents recurring missions)<br/>
+		[Added] Mission intel and author info to the splash screen<br/>
+		[Added] Gunstore radars are back!<br/>
+		[Added] New side mission Hostile Helicopter<br/>
+		[Added] New main mission Hostile Helicopter-Squad<br/>
+		[Changed] Weapon and item prizes in the gunstore<br/>
+		[Changed] death sequence when killed<br/>
+		[Changed] baseparts that kept falling over<br/>
+		[Changed] Logisitic checks on init (caused long waiting times)<br/>
+		[Changed] Enabled groups in Blufor/Opfor <br/>
+		[Fixed] Flare rounds in gunstore not possible to buy<br/>
+		[Fixed] AI and Vehicles from convoy missions not despawning<br/>
+		[Fixed] Slow respawn dialog on first spawn<br/>
+		[Removed] Some more GoT2DayZ.nl references where removed<br/>
 		<br/>
 "
 ]
@@ -135,9 +153,10 @@ player createDiaryRecord["404games",
 	Domuk<br/>
 	<br/>
 	Others:<br/>
-	*Sanjo (GitHub)<br/>
-	<br/>*Convoy MainMission<br/>
-	*Tonic-_- (BIS-forums)<br/>
+	Sanjo (GitHub)<br/>
+	*Mission-Selector<br/>
+	*Convoy MainMission<br/><br/>
+	Tonic-_- (BIS-forums)<br/>
 	*helped disabling r3f on mapbound items<br/>
 	<br/>
 "
@@ -149,17 +168,19 @@ player createDiaryRecord["GoT2DayZ",
 "Who what where?",
 "
 <br/>
-	What is GoT2DayZ and why are you hosting Arma3?<br/><br/>
-	GoT2DayZ was initially founded as a player-base for the dutch Tweakers.NET Community<br/>
-	However as time passed on we also started playing wasteland on arma2.<br/>
-	Now with arma3 also having wasteland, we run 3 publics and 1 private server.<br/>
-	<br/><br/>
-	* DayZ Chernarus (Private/Passworded) with safezone<br/>
+	What is GoT/GoT2DayZ?<br/><br/>
+	GoT2DayZ started as a DayZ community for Tweakers.Net<br/>
+	As time passed on we also started playing wasteland.<br/>
+	Now we run some public servers.<br/>
+	And also modify Wasteland missions for them.<br/>
+	<br/>Our website: www.got2dayz.nl<br/><br>
+	our servers:<br/>
 	* DayZ Celle (Whitelisted)<br/>
 	* ArmA2 Wasteland on Utes (Customized by us)<br/>
 	* ArmA3 Alpha Wasteland on Stratis (Costomized by us)<br/>
 	<br/>
-	I cant urge enough that all credits for this mission go to the original makers at 404Games!<br/>
+	I cant urge enough that all credits for this mission go<br/>
+	to the original makers at 404Games.co.uk!<br/>
 	<br/>
 "
 ]
@@ -181,9 +202,11 @@ player createDiaryRecord["GoT2DayZ",
 "Credits",
 "
 <br/>
-	Hosting and mod edits:<br/><br/>
-	JoSchaap<br/>
-	Anyone who files issues or pull requests on the GiT's<br/>
+	Wasteland Middion edit-credits:<br/><br/>
+	-JoSchaap<br/>
+	-Sanjo<br/>
+	-Tonic-_-<br/>
+	-Anyone who files issues or pull requests on the GiT's<br/>
 "
 ]
 ];

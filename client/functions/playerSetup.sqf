@@ -84,5 +84,5 @@ _player setVariable["camonet",0,false];
 
 [] execVM "client\functions\playerActions.sqf";
 
-_player groupChat format["GoT2DayZ Initialization Complete"];
+_player groupChat format["GoT Wasteland (Complete Edition) Initialization Complete"];
 playerSetupComplete = true;
