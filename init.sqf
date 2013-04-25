@@ -1,9 +1,13 @@
-//	@file Version: 1.1
+//	@file Version: 1.2
 //	@file Name: init.sqf
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap
 //	@file Created: 20/11/2012 05:13
 //	@file Description: The main init.
 //	@file Args:
+
+//  	reset BIS_fnc_mp
+"BIS_fnc_MP_packet" addPublicVariableEventHandler {};
+
 #include "setup.sqf"
 
 StartProgress = false;
