@@ -10,7 +10,7 @@ class Header
 	maxPlayers=65;
 };
 author="JoSchaap (GoT2DayZ.nl & Tweakers.Net)";
-OnLoadName = "GoT Wasteland v1.08(D)";
+OnLoadName = "GoT Wasteland v1.08(E)";
 OnLoadMission = "Wasteland is a harsh survival sandbox where 2 teams and independed players fight for survival";
 //Dialog includes
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
