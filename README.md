@@ -1,11 +1,11 @@
-GoT_Wasteland-Stratis (Full) v1.08 (Revision:d)
+GoT_Wasteland-Stratis (Full) v1.08 (Revision:e)
 ==================================
 
 All credits for Wasteland go to 404Games and their DEV's
 This is just my alteration.
 
-current status: v1.08(d) (Complete Edition)
-current status: v1.08(d) (Stripped Edition) only if fixes apply to it
+current status: v1.08(e) (Complete Edition)
+current status: v1.08(e) (Stripped Edition) only if fixes apply to it
 
 If you are not famillair with creating PBO files, grab the ready-to-go-PBO here: 
 https://github.com/JoSchaap/Arma3_Binary_PBO
@@ -72,6 +72,11 @@ Changelog
 [Fixed] AI and Vehicles from convoy missions not despawning<br/>
 [Fixed] Slow respawn dialog on first spawn<br/>
 [Removed] Some more GoT2DayZ.nl references where removed<br/>
+-Revision:e-<br/>
+[Fixed] Vehicles not spawning since update to alpha<br/>
+[Fixed] Ammoboxes not spawning since update to alpha<br/>
+[Fixed] Moving objects caused loss of weapon attachments<br/>
+[Removed] Deprecated function calls<br/>
 
 Please be reminded that i did NOT create this mission from scratch, most of the work has been done by the awesome DEV-team @ 404Games. Im just the huy that had some spare time to make it work in ArmA3Alpha :)
 
