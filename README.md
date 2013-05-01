@@ -73,6 +73,7 @@ Changelog
 [Fixed] Slow respawn dialog on first spawn<br/>
 [Removed] Some more GoT2DayZ.nl references where removed<br/>
 -Revision:e-<br/>
+[Added] The location ticker is back (BIS Fixed it!)<br/>
 [Fixed] Vehicles not spawning since update to alpha<br/>
 [Fixed] Ammoboxes not spawning since update to alpha<br/>
 [Fixed] Moving objects caused loss of weapon attachments<br/>
