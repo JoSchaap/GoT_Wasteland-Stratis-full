@@ -1,8 +1,8 @@
 /**
- * Fait d�placer un objet par le joueur. Il garde l'objet tant qu'il ne le rel�che pas ou ne meurt pas.
- * L'objet est relach� quand la variable R3F_LOG_joueur_deplace_objet passe � objNull ce qui terminera le script
+ * Fait déplacer un objet par le joueur. Il garde l'objet tant qu'il ne le relâche pas ou ne meurt pas.
+ * L'objet est relaché quand la variable R3F_LOG_joueur_deplace_objet passe à objNull ce qui terminera le script
  * 
- * @param 0 l'objet � d�placer
+ * @param 0 l'objet à déplacer
  * 
  * Copyright (C) 2010 madbull ~R3F~
  * 
@@ -26,7 +26,7 @@ else
 	
 	R3F_LOG_objet_selectionne = objNull;
 	
-	private ["_objet", "_est_calculateur", "_arme_principale", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_weapitems"];
+	private ["_objet", "_est_calculateur", "_arme_principale", "_arme_principale_accessoires", "_arme_principale_magasines", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon", "_muzzles", "_magazine", "_ammo"];
 	
 	_objet = _this select 0;
 	if(isNil {_objet getVariable "R3F_Side"}) then {
@@ -43,7 +43,7 @@ else
 	};
 	_objet setVariable ["R3F_Side", (side player), true];
 	
-	// Si l'objet est un calculateur d'artillerie, on laisse le script sp�cialis� g�rer
+	// Si l'objet est un calculateur d'artillerie, on laisse le script spécialisé gérer
 	_est_calculateur = _objet getVariable "R3F_ARTY_est_calculateur";
 	if !(isNil "_est_calculateur") then
 	{
@@ -58,9 +58,26 @@ else
 		
 		// Sauvegarde et retrait de l'arme primaire
 		_arme_principale = primaryWeapon player;
+		_arme_principale_accessoires = [];
+		_arme_principale_magasines = [];
+		
 		if (_arme_principale != "") then
 		{
-// [givin up someone feel free to help out..]	{_weapitems = PrimaryWeaponItems _arme_principale;}foreach PrimaryWeaponItems _arme_principale;
+			_arme_principale_accessoires = primaryWeaponItems player;
+			
+			player selectWeapon _arme_principale;
+			_arme_principale_magasines set [count _arme_principale_magasines, [currentMagazine player, player ammo _arme_principale]];
+			
+			//_muzzles = getArray(configFile>>"CfgWeapons">>_arme_principale>>"muzzles");
+			
+			{ // add one mag for each muzzle
+				if (_x != "this") then {
+					diag_log format["%1", player ammo _x];
+					player selectWeapon _x;
+					_arme_principale_magasines set [count _arme_principale_magasines, [currentMagazine player, player ammo _x]];
+				};
+			} forEach getArray(configFile>>"CfgWeapons">>_arme_principale>>"muzzles");
+			
 			player playMove "AidlPercMstpSnonWnonDnon04";
 			sleep 1;
 			player removeWeapon _arme_principale;
@@ -91,7 +108,7 @@ else
 				// Le canon doit pointer devant nous (sinon on a l'impression de se faire empaler)
 				_azimut_canon = ((_objet weaponDirection (weapons _objet select 0)) select 0) atan2 ((_objet weaponDirection (weapons _objet select 0)) select 1);
 				
-				// On est oblig� de demander au serveur de tourner le canon pour nous
+				// On est obligé de demander au serveur de tourner le canon pour nous
 				R3F_ARTY_AND_LOG_PUBVAR_setDir = [_objet, (getDir _objet)-_azimut_canon];
 				if (isServer) then
 				{
@@ -108,11 +125,11 @@ else
 			
 			_action_menu_release_relative = player addAction [("<t color=""#21DE31"">" + STR_R3F_LOG_action_relacher_objet + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", false, 5, true, true];
 			_action_menu_release_horizontal = player addAction [("<t color=""#21DE31"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
-			_action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45�</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
-			_action_menu_90 = player addAction [("<t color=""#dddd00"">Rotate object 90�</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
-			_action_menu_180 = player addAction [("<t color=""#dddd00"">Rotate object 180�</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
+			_action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
+			_action_menu_90 = player addAction [("<t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
+			_action_menu_180 = player addAction [("<t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
 			
-			// On limite la vitesse de marche et on interdit de monter dans un v�hicule tant que l'objet est port�
+			// On limite la vitesse de marche et on interdit de monter dans un véhicule tant que l'objet est porté
 			while {!isNull R3F_LOG_joueur_deplace_objet && alive player} do
 			{
 				if (vehicle player != player) then
@@ -126,8 +143,11 @@ else
 				{
 					player globalChat STR_R3F_LOG_courir_trop_vite;
 
-					if((currentWeapon player) in ["hgun_P07_F","hgun_rook40_F","M9", "M9SD", "Colt1911", "Makarov", "MakarovSD", "Sa61_EP1", "UZI_EP1", "UZI_SD_EP1", "revolver_EP1", "revolver_gold_EP1", "glock17_EP1"])
-					then {player playMove "amovpercmstpsraswpstdnon_amovppnemstpsraswpstdnon";} else {player playMove "AmovPpneMstpSnonWnonDnon"};
+					//if((currentWeapon player) in ["hgun_P07_F","hgun_rook40_F","M9", "M9SD", "Colt1911", "Makarov", "MakarovSD", "Sa61_EP1", "UZI_EP1", "UZI_SD_EP1", "revolver_EP1", "revolver_gold_EP1", "glock17_EP1"])
+					//then {player playMove "amovpercmstpsraswpstdnon_amovppnemstpsraswpstdnon";} else {
+					
+					player playMove "AmovPpneMstpSrasWpstDnon";
+					//};
 
 					sleep 1;
 				};
@@ -135,7 +155,7 @@ else
 				sleep 0.25;
 			};
 			
-			// L'objet n'est plus port�, on le repose
+			// L'objet n'est plus porté, on le repose
 			detach _objet;
 			if(R3F_LOG_force_horizontally) then {
 				R3F_LOG_force_horizontally = false;
@@ -175,12 +195,27 @@ else
 				if(primaryWeapon player != "") then {
 					_o = createVehicle ["WeaponHolder", player modelToWorld [0,0,0], [], 0, "NONE"];
 					_o addWeaponCargoGlobal [_arme_principale, 1];
-				} else {
+				}
+				else {
+				
+					diag_log format["%1", count _arme_principale_magasines];
+					
+					{
+						_magazine = _x select 0;
+						_ammo = _x select 1;
+						diag_log format["Mag: %1", _magazine];
+						diag_log format["Ammo: %1", _ammo];
+						if(_magazine != "" && _ammo > 0) then {
+							//_magazine = _x;
+							player addMagazine _x;
+							// waitUntil { {_magazine == toLower(_x) } count (magazines player) > 0 };
+						};
+					} forEach _arme_principale_magasines; // add all default primery weapon magazines
+					
 					player addWeapon _arme_principale;
-// [givin up someone feel free to help out..]						if (!isnill _weapitems) then
-// [givin up someone feel free to help out..]						{
-// [givin up someone feel free to help out..]							_arme_principale addPrimaryWeaponItem _x;
-// [givin up someone feel free to help out..]						} foreach _weapitems;
+					
+					{ if(_x!="") then { player addPrimaryWeaponItem _x; }; } foreach (_arme_principale_accessoires);
+					
 					player selectWeapon _arme_principale;
 					player selectWeapon (getArray (configFile >> "cfgWeapons" >> _arme_principale >> "muzzles") select 0);
 				};
