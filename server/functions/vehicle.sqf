@@ -1,7 +1,7 @@
 /*  
 =========================================================
-  Simple Vehicle Respawn Script v1.7
-  by Tophe of Östgöta Ops [OOPS]
+  Simple Vehicle Respawn Script v1.8
+  by Tophe of ï¿½stgï¿½ta Ops [OOPS], also thanks too SPJESTER (A404forums)
   
   Put this in the vehicles init line:
   veh = [this] execVM "vehicle.sqf"
@@ -58,7 +58,7 @@ Contact & Bugreport: harlechin@hotmail.com
 */
  
 if (!isServer) exitWith {};
-#include "setup.sqf" 
+
 // Define variables
 _unit = _this select 0;
 _delay = if (count _this > 1) then {_this select 1} else {30};
@@ -74,7 +74,6 @@ _unitname = vehicleVarName _unit;
 if (isNil _unitname) then {_hasname = false;} else {_hasname = true;};
 _noend = true;
 _run = true;
-_result = 0;
 _rounds = 0;
 
 if (_delay < 0) then {_delay = 0};
@@ -87,77 +86,56 @@ _position = getPosASL _unit;
 _type = typeOf _unit;
 _dead = false;
 _nodelay = false;
-#ifdef __A2NET__
-_startTime = floor(netTime);
-#else
-_startTime = floor(time);
-#endif
+
 
 // Start monitoring the vehicle
 while {_run} do 
 {	
-	#ifdef __A2NET__
-	_currTime = floor(netTime);
-	#else
-	_currTime = floor(time);
-	#endif
-    if(_currTime - _startTime >= 30) then {_result = 1;};
-        
-	if(_result == 1) then
-    {
-        sleep (2 + random 10);
-      	if ((getDammage _unit > 0.8) and ({alive _x} count crew _unit == 0)) then {_dead = true};
+	sleep (2 + random 10);
+      if ((getDammage _unit > 0.8) and ({alive _x} count crew _unit == 0)) then {_dead = true};
 
-		// Check if the vehicle is deserted.
-		if (_deserted > 0) then
+	// Check if the vehicle is deserted.
+	if (_deserted > 0) then
+	{
+		if ((getPosASL _unit distance _position > 10) and ({alive _x} count crew _unit == 0) and (getDammage _unit < 0.8)) then 
 		{
-			if ((getPosASL _unit distance _position > 10) and ({alive _x} count crew _unit == 0) and (getDammage _unit < 0.8)) then 
-			{
-				#ifdef __A2NET__
-				_timeout = netTime + _deserted;
-				#else
-				_timeout = time + _deserted;
-				#endif
-				
-				sleep 0.1;
-				#ifdef __A2NET__
-			 	waitUntil {_timeout < netTime or !alive _unit or {alive _x} count crew _unit > 0};
-				#else
-				waitUntil {_timeout < time or !alive _unit or {alive _x} count crew _unit > 0};
-				#endif
-				if ({alive _x} count crew _unit > 0) then {_dead = false}; 
-				if ({alive _x} count crew _unit == 0) then {_dead = true; _nodelay =true}; 
-				if !(alive _unit) then {_dead = true; _nodelay = false}; 
-			};
-		};
-
-		// Respawn vehicle
-      	if (_dead) then 
-		{	
-			if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
-			if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
-			if (_explode) then {_effect = "M_TOW_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
+			_timeout = time + _deserted;
 			sleep 0.1;
-	
-			deleteVehicle _unit;
-			sleep 2;
-            
-            _num = floor (random 100);
-			if (_num < 100) then {_type = 0;};
-			if (_num < 35) then {_type = 1;};
-			if (_num < 10) then {_type = 2;};
-			[_position, _type] call vehicleCreation;
-			_run = false;
+		 	waitUntil {_timeout < time or !alive _unit or {alive _x} count crew _unit > 0};
+			if ({alive _x} count crew _unit > 0) then {_dead = false}; 
+			if ({alive _x} count crew _unit == 0) then {_dead = true; _nodelay =true}; 
+			if !(alive _unit) then {_dead = true; _nodelay = false}; 
 		};
-        #ifdef __A2NET__
-		_startTime = floor(netTime);
-		#else
-		_startTime = floor(time);
-		#endif
-        
-		_result = 0;
-    } else {
-    	sleep 5;
-    };
-	sleep 1;
+	};
+
+	// Respawn vehicle
+      if (_dead) then 
+	{	
+		if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
+		if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
+		if (_explode) then {_effect = "M_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
+		sleep 0.1;
+
+		deleteVehicle _unit;
+		sleep 2;
+		_unit = _type createVehicle _position;
+		_unit setPosASL _position;
+		_unit setDir _dir;
+
+		if (_haveinit) then 
+		{
+			_unit call compile format ["%1=_This; PublicVariable '%1'",_unitinit];
+			};
+		
+		if (_hasname) then 
+		{
+			_unit setVehicleVarName _unitname;
+			_unit call compile format ["%1=_This; PublicVariable '%1'",_unitname];
+			};					
+		_dead = false;
+
+		// Check respawn amount
+		if !(_noend) then {_rounds = _rounds + 1};
+		if ((_rounds == _respawns) and !(_noend)) then {_run = false;};
+	};
 };
