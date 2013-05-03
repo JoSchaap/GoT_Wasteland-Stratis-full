@@ -72,7 +72,7 @@ else
 			
 			{ // add one mag for each muzzle
 				if (_x != "this") then {
-					diag_log format["%1", player ammo _x];
+					//diag_log format["%1", player ammo _x];
 					player selectWeapon _x;
 					_arme_principale_magasines set [count _arme_principale_magasines, [currentMagazine player, player ammo _x]];
 				};
@@ -198,13 +198,13 @@ else
 				}
 				else {
 				
-					diag_log format["%1", count _arme_principale_magasines];
+					//diag_log format["%1", count _arme_principale_magasines];
 					
 					{
 						_magazine = _x select 0;
 						_ammo = _x select 1;
-						diag_log format["Mag: %1", _magazine];
-						diag_log format["Ammo: %1", _ammo];
+						//diag_log format["Mag: %1", _magazine];
+						//diag_log format["Ammo: %1", _ammo];
 						if(_magazine != "" && _ammo > 0) then {
 							//_magazine = _x;
 							player addMagazine _x;
