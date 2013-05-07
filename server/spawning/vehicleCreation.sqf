@@ -1,6 +1,6 @@
 //	@file Version: 1.0
 //	@file Name: vehicleCreation.sqf
-//	@file Author: [404] Deadbeat
+//	@file Author: [404] Deadbeat, [GoT] JoSchaap
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
@@ -15,7 +15,7 @@ if (_type == 0) then {
 	//Car Initilization, Pick Car Type.
     _cartype = civilianVehicles select (random (count civilianVehicles - 1));
     _car = createVehicle [_cartype,_pos,[], 20,"None"];
-	[_car, "nul=[this, 60, 1200, 0, false] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit;
+	[_car, "0 = [this, 30] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit;
 	processInitCommands;
     
 	//Clear Cars Inventory
@@ -40,7 +40,7 @@ if (_type == 1) then {
 	//Car Initilization, Pick Car Type.
     _cartype = militaryVehicles select (random (count militaryVehicles - 1));
     _car = createVehicle [_cartype,_pos, [], 30, "None"];
-	[_car, "nul=[this, 60, 1200, 0, false] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit; 
+	[_car, "0 = [this, 30] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit; 
 	processInitCommands;
     
 	//Clear Cars Inventory
@@ -65,7 +65,7 @@ if (_type == 2) then {
 	//Car Initilization, Pick Car Type.
     _cartype = armedMilitaryVehicles select (random (count armedMilitaryVehicles - 1));
     _car = createVehicle [_cartype,_pos, [], 30, "None"];
-    [_car, "nul=[this, 60, 1200, 0, false] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit; 
+    [_car, "0 = [this, 30] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit; 
 	processInitCommands;
 
 	//Clear Cars Inventory
