@@ -8,3 +8,4 @@
 #define gunshop_total 2008
 #define gunshop_buysell 2020
 #define gunshop_gun_Info 2021
+#define gunshop_item_pic 2022
