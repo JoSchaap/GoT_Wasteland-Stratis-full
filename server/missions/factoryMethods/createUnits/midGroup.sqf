@@ -61,9 +61,9 @@ _man5 addWeapon "arifle_TRG20_F";
 _man6 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
 _man6 addUniform "U_B_CombatUniform_mcam_vest";
 _man6 addVest "V_PlateCarrier1_rgr";
-_man6 addMagazine "20Rnd_762x45_Mag";
-_man6 addMagazine "20Rnd_762x45_Mag";
-_man6 addWeapon "arifle_MXM_F";
+_man6 addMagazine "20Rnd_762x51_Mag";
+_man6 addMagazine "20Rnd_762x51_Mag";
+_man6 addWeapon "srifle_EBR_F";
 
 //Grenadier
 _man7 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) - 40, 0], [], 0.5, "Form"];
