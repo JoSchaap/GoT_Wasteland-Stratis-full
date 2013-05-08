@@ -35,7 +35,7 @@ randomweapon_itemlist = [
      _position = _this;
      _selectedgroup = (floor(random(count randomweapon_weaponlist)));
      _weapon = randomweapon_weaponlist select _selectedgroup select 0;
-     _weaponholder = createVehicle ["WeaponHolder", _position, [], 0, "CAN_COLLIDE"];
+     _weaponholder = createVehicle ["groundWeaponHolder", _position, [], 0, "CAN_COLLIDE"];
      _weaponholder addWeaponCargoGlobal [_weapon, 1];
      if((count((randomweapon_weaponlist) select _selectedgroup)) > 1) then {
      for[{_rm = 0}, {_rm < (2 + floor(random(3)))}, {_rm = _rm + 1}] do {
