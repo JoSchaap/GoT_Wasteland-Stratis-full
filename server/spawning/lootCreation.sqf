@@ -19,12 +19,10 @@ randomweapon_weaponlist = [
 ["MX 3GL","arifle_MX_GL_F"],
 ["Katiba GL","arifle_Khaybar_GL_F"],
 ["EBR","srifle_EBR_F"], 
-["Binocular"],
-["Binocular_Vector"]
+["Binocular"]
 ];
  
 randomweapon_itemlist = [
-"NVGoggles",  			//Nightvision
 "Land_Sack_F",				//Money
 "Land_Basket_F",			//Water
 "Land_Bucket_F"				//Food
