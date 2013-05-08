@@ -144,6 +144,17 @@ player createDiaryRecord["changelog",
 		[Fixed] Moving objects caused loss of weapon attachments<br/>
 		[Removed] Deprecated function calls<br/>
 		<br/>
+		*Revision:f<br/>
+		[Added] More spawns for objects and vehicles<br/>
+		[Added] Random loot inside buildings all over the map<br/>
+		[Added] Backpacks to gunstore<br/>
+		[Changed] Starting backpack<br/>
+		[Changed] Armed/Civil Heli missions no longer spawn broken<br/>
+		[Fixed] Vehicles not respawning<br/>
+		[Fixed] Not being able to buy 7.62mm ammo<br/>
+		[Fixed] Gunstore now properly checks your inventory space<br/>
+		[Fixed] Various broken admin-features<br/>
+		<br/>
 "
 ]
 ];
@@ -161,10 +172,11 @@ player createDiaryRecord["404games",
 	<br/>
 	Others:<br/>
 	Sanjo (GitHub)<br/>
-	*Mission-Selector<br/>
-	*Convoy MainMission<br/><br/>
-	Tonic-_- (BIS-forums)<br/>
-	*helped disabling r3f on mapbound items<br/>
+	AgentREV (GitHub)<br/>
+	SPJESTER (404forums)<br/>
+	Hub (404forums)<br/>
+	Tonic-_- (BIS-forums)<br/><br/>
+	*Thanks ALOT guys!!<br/>
 	<br/>
 "
 ]
@@ -210,10 +222,13 @@ player createDiaryRecord["GoT2DayZ",
 "
 <br/>
 	Wasteland Middion edit-credits:<br/><br/>
-	-JoSchaap<br/>
-	-Sanjo<br/>
-	-Tonic-_-<br/>
-	-Anyone who files issues or pull requests on the GiT's<br/>
+	- JoSchaap<br/>
+	- Sanjo (GitHub)<br/>
+	- AgentREV (GitHub)<br/>
+	- SPJESTER (404forums)<br/>
+	- Hub (404forums)<br/>
+	- Tonic-_- (BIS-forums)<br/>
+	- Also Anyone who files issues or pull requests!<br/>
 "
 ]
 ];
