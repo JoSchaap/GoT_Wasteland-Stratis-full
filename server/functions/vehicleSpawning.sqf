@@ -10,7 +10,7 @@ private ["_counter"];
 
 _counter = 0;
 
-for "_i" from 1 to nbVehicleMarkers do
+for "_i" from 1 to 118 do
 {
 	[getMarkerPos format ["Spawn_%1", _i]] call vehicleCreation;
 	_counter = _counter + 1;
