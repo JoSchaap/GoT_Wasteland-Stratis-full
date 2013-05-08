@@ -16,7 +16,7 @@ randomweapon_weaponlist = [
 ["MXC","arifle_MXC_F"],
 ["Katiba","arifle_Khaybar_F"],
 ["Katiba Carabine","arifle_Khaybar_C_F"],
-["MX 3GL","arifle_MX_GL_F"0],
+["MX 3GL","arifle_MX_GL_F"],
 ["Katiba GL","arifle_Khaybar_GL_F"],
 ["EBR","srifle_EBR_F"], 
 ["Binocular"],
