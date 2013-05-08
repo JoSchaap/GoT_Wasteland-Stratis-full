@@ -44,9 +44,9 @@ _man3 addWeapon "arifle_TRG20_F";
 _man4 = _group createunit ["C_man_polo_4_F", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
 _man4 addUniform "U_B_CombatUniform_mcam_vest";
 _man4 addVest "V_PlateCarrier1_rgr";
-_man4 addMagazine "20Rnd_762x45_Mag";
-_man4 addMagazine "20Rnd_762x45_Mag";
-_man4 addWeapon "arifle_MXM_F";
+_man4 addMagazine "20Rnd_762x51_Mag";
+_man4 addMagazine "20Rnd_762x51_Mag";
+_man4 addWeapon "srifle_EBR_F";
 
 _leader = leader _group;
 [_group, _pos] call defendArea;
