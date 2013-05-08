@@ -87,7 +87,7 @@ Changelog
 [Fixed] Vehicles not respawning<br/>
 [Fixed] Not being able to buy 7.62mm ammo<br/>
 [Fixed] Gunstore now properly checks your inventory space<br/>
-[Fixed] Various broken admin-features
+[Fixed] Various broken admin-features<br/>
 
 
 Please be reminded that i did NOT create this mission from scratch, most of the work has been done by the awesome DEV-team @ 404Games. Im just the huy that had some spare time to make it work in ArmA3Alpha :)
