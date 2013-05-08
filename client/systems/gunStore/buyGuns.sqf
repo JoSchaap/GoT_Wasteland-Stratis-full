@@ -24,267 +24,144 @@ _totalText = _dialog displayCtrl gunshop_total;
 _playerMoneyText = _Dialog displayCtrl gunshop_money;
 _size = lbSize _cartlist;
 
-switch(_switch) do 
+_notEnoughSpace = "You do not have space for ""%1"""; 
+_alreadyHaveType = "You already have a weapon of this type, please unequip it before purchasing ""%1"""; 
+
+switch (_switch) do 
 {
 	//Buy To Player
 	case 0: 
 	{
-		for [{_x=0},{_x<=_size},{_x=_x+1}] do
+		for "_x" from 0 to (_size - 1) do
 		{
 			_itemText = _cartlist lbText _x;
-			//0 = Primary, 1 = SideArm, 2= Secondary, 3= HandGun Mags, 4= MainGun Mags, 5= Binocular, 7=Compass Slots
-			_playerSlots = [player] call BIS_fnc_invSlotsEmpty;
+			//0 = Primary, 1 = SideArm, 2 = Secondary, 3 = HandGun Mags, 4 = MainGun Mags, 5 = Binocular, 7 =Compass Slots
+			_playerSlots = [player] call BIS_fnc_invSlotsEmpty; 
 			
 			{
-				if(_itemText == _x select 0) then
+				_name = _x select 0;
+				
+				if (_itemText == _name) then
 				{
 					_class = _x select 1;
-					_weapon = (configFile >> "cfgWeapons" >> _class);
-					_type = getNumber(_weapon >> "type");
+					_type = getNumber (configFile >> "CfgWeapons" >> _class >> "type");
 					
-					//Main Rifle
-					if(_type == 1) then
+					if ((_type == 1 && (_playerSlots select 0) > 0) || {_type == 2 && (_playerSlots select 1) > 0} || {_type == 4 && (_playerSlots select 2) > 0}) then
 					{
-						if((_playerSlots select 0) >= 1) then
-						{
-							player addWeapon _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach weaponsArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];  
-						};
-					};
-					
-					//Side Arm
-					if(_type == 2) then
+						player addWeapon _class;
+					}
+					else
 					{
-						if((_playerSlots select 1) >= 1) then
-						{
-							player addWeapon _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach weaponsArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];  
-						};
+						gunStoreCart = gunStoreCart - (_x select 2);
+						hint format [_alreadyHaveType,_name];  
 					};
-					
-					//Rocket Launcher
-					if(_type == 4) then
-					{
-						if((_playerSlots select 2) >= 1) then
-						{
-							player addWeapon _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach weaponsArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];  
-						};
-					};
-					
-					//LMG
-					if(_type == 5) then
-					{
-						if(((_playerSlots select 2) >= 1) AND ((_playerSlots select 0) >= 1)) then
-						{
-							player addWeapon _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach weaponsArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];  
-						};
-					};
-				};                    		
-			}forEach weaponsArray;
+				};
+			} forEach weaponsArray;
 
 			{
-				if(_itemText == _x select 0) then
+				_name = _x select 0;
+				
+				if (_itemText == _name) then
 				{
 					_class = _x select 1;
-					_mag = (configFile >> "cfgMagazines" >> _class);
-					_type = (getNumber(_mag >> "type"));
+					_type = getNumber (configFile >> "CfgMagazines" >> _class >> "type");
 					
-					//Check how many main mags you have
-					if(_type == 256) then
+					if ([player, _class] call fn_fitsInventory) then
 					{
-						if((_playerSlots select 4) >= 1) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
-					};
-					
-					if(_type == 512) then
+						player addMagazine _class;
+					}
+					else
 					{
-						if((_playerSlots select 4) >= 2) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
-					};
-					
-					if(_type == 768) then
-					{
-						if((_playerSlots select 4) >= 3) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
-					};
-					
-					if(_type == 1024) then
-					{
-						if((_playerSlots select 4) >= 4) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
-					};
-					
-					if(_type == 1280) then
-					{
-						if((_playerSlots select 4) >= 5) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
-					};
-					
-					if(_type == 1536) then
-					{
-						if((_playerSlots select 4) >= 6) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
-					};
-					
-					//Check how many side mags you have
-					if(_type == 16) then
-					{
-						if((_playerSlots select 3) >= 1) then
-						{
-							player addMagazine _class;
-						}
-						else
-						{
-							{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach ammoArray;
-							gunStoreCart = gunStoreCart - _price;
-							hint format["You do not have space for this item %1",_name];
-						};
+						gunStoreCart = gunStoreCart - (_x select 2);
+						hint format [_notEnoughSpace,_name];
 					};
 				}
-			}forEach ammoArray;
+			} forEach ammoArray;
 
 			{
-                if(_itemText == _x select 0) then
+				_name = _x select 0;
+				
+                if (_itemText == _name) then
                 {
                     _class = _x select 1;
-					switch((_x select 3)) do
+					
+					switch (_x select 3) do
                     {
                     	case "binoc":
                         {
-                            if((_playerSlots select 5) >= 1) then
+                            if ((_playerSlots select 5) > 0 || {[player, _class] call fn_fitsInventory}) then
 							{
 								player addWeapon _class;
 							}
 							else
 							{
-								{if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach accessoriesArray;
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
+								gunStoreCart = gunStoreCart - (_x select 2);
+								hint format [_notEnoughSpace,_name];
 							};
                         };
                         case "item":
                         {
-                            player addItem _class;
+							if ([player, _class] call fn_fitsInventory) then
+							{
+								player addItem _class;
+							}
+							else
+							{
+								gunStoreCart = gunStoreCart - (_x select 2);
+								hint format [_notEnoughSpace,_name];
+							};
                         };
+						case "backpack":
+						{
+							if (backpack player == "") then
+							{
+								player addBackpack _class;
+							}
+							else
+							{
+								gunStoreCart = gunStoreCart - (_x select 2);
+								hint format["You already have a backpack, please drop it before buying a new one"]; 
+							};
+						};
                         case "vest":
                         {
-                            _vestName = vest player;
-                            if(_vestName == "") then
+                            if (vest player == "") then
                             {
                                 player addVest _class;
                             }
                             else
                             {
-                               {if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach accessoriesArray;
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You already have a vest please drop it before buying a new one"]; 
+								gunStoreCart = gunStoreCart - (_x select 2);
+								hint format["You already have a vest, please drop it before buying a new one"]; 
                             };
                         };
                         case "uni":
                         {
-                            _vestName = uniform player;
-                            if(_vestName == "") then
+                            if (uniform player == "") then
                             {
                                 player addUniform _class;
                             }
                             else
                             {
-                               {if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach accessoriesArray;
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You already have a uniform on please drop it before buying a new one"]; 
+								gunStoreCart = gunStoreCart - (_x select 2);
+								hint format["You already have an uniform, please drop it before buying a new one"]; 
                             };
                         };
                         case "hat":
                         {
-                            _vestName = headgear player;
-                            if(_vestName == "") then
+                            if (headgear player == "") then
                             {
                                 player addHeadgear _class;
                             }
                             else
                             {
-                               {if(_x select 1 == _class) then{_price = _x select 2; _name = _x select 0;};}forEach accessoriesArray;
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You something in the headgear slot please drop it before buying a new one"]; 
+								gunStoreCart = gunStoreCart - (_x select 2);
+								hint format["You already have headgear, please drop it before buying a new one"]; 
                             };
-                        };
-                        case default
-                        {
-                            
                         };
                     };
 				};
-            }forEach accessoriesArray;
+            } forEach accessoriesArray;
 		};
 
 		player setVariable["cmoney",_playerMoney - gunStoreCart,true];
