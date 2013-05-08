@@ -76,7 +76,7 @@ else
 			} forEach getArray(configFile>>"CfgWeapons">>_arme_principale>>"muzzles");
 			
 			player playMove "AidlPercMstpSnonWnonDnon04";
-			sleep 1.5;
+			sleep 1;
 			player removeWeapon _arme_principale;
 		}
 		else {sleep 0.5;};
