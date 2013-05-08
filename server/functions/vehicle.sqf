@@ -68,7 +68,7 @@ _nodelay = false;
 // Start monitoring the vehicle
 while {_run} do 
 {	
-	sleep (5 + random 5);
+	sleep 10;
 	
     if (getDammage _unit > 0.8 && {alive _unit} count crew _unit == 0) then {
 		_dead = true;
@@ -77,22 +77,33 @@ while {_run} do
 	// Check if the vehicle is deserted.
 	if (_deserted > 0) then
 	{
-		if (getPosASL _unit distance _position > 10 && {{alive _unit} count crew _unit == 0} && {isNull (_unit getVariable ["R3F_LOG_est_transporte_par", objNull])} && {isNull (_unit getVariable ["R3F_LOG_est_deplace_par", objNull])}) then 
+		if (getPosASL _unit distance _position > 10 && {alive _unit} count crew _unit == 0) then 
 		{
+			diag_log format ["Crew: %1", {alive _unit} count crew _unit];
+			
 			_timeout = time + _deserted;
 			sleep 0.1;
 			
-			waitUntil { _timeout < time || !alive _unit || {alive _x} count crew _unit > 0 };
+			while { _timeout > time && alive _unit && {alive _unit} count crew _unit == 0 } do
+			{
+				sleep 5;
+				
+				// R3F HELL YEA
+				if (!isNull (_unit getVariable ["R3F_LOG_est_transporte_par", objNull]) || {!isNull (_unit getVariable ["R3F_LOG_est_deplace_par", objNull])}) then
+				{
+					_timeout = time + _deserted;
+				};
+			};
 			
-			if ({alive _x} count crew _unit > 0) then
+			if ({alive _unit} count crew _unit > 0) then
 			{
 				_dead = false;
 			}
-            else 
+			else
 			{
 				_dead = true;
 				if (alive _unit) then { _nodelay = true } else { _nodelay = false };
-			}
+			};
 		};
 	};
 	
@@ -119,7 +130,7 @@ while {_run} do
 		
 		if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
 		
-		if (typename _static == "array") then { _position = _respawnPos; }
+		if (typename _static == "ARRAY") then { _position = _static; }
 		else { _position = getPosASL _unit; _dir = getDir _unit; };
 		
 		if (_explode) then {_effect = "M_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
