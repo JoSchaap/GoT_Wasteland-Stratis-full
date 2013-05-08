@@ -10,15 +10,15 @@
 
 
 randomweapon_weaponlist = [
-["MX","arifle_MX_F"],
-["TRG-21","arifle_TRG21_F"],
-["TRG-20","arifle_TRG20_F"],
-["MXC","arifle_MXC_F"],
-["Katiba","arifle_Khaybar_F"],
-["Katiba Carabine","arifle_Khaybar_C_F"],
-["MX 3GL","arifle_MX_GL_F"],
-["Katiba GL","arifle_Khaybar_GL_F"],
-["EBR","srifle_EBR_F"], 
+["arifle_MX_F","30Rnd_65x39_caseless_mag"],
+["arifle_TRG21_F","30Rnd_65x39_case_mag"],
+["arifle_TRG20_F","30Rnd_65x39_case_mag_Tracer"],
+["arifle_MXC_F","30Rnd_65x39_caseless_mag_Tracer"],
+["arifle_Khaybar_F","30Rnd_65x39_caseless_green"],
+["arifle_Khaybar_C_F","30Rnd_65x39_caseless_green_mag_Tracer"],
+["arifle_MX_GL_F","30Rnd_65x39_caseless_mag"],
+["arifle_Khaybar_GL_F","30Rnd_65x39_caseless_green_mag_Tracer"],
+["srifle_EBR_F","20Rnd_762x51_Mag"], 
 ["Binocular"]
 ];
  
