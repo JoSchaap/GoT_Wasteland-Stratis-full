@@ -172,6 +172,7 @@ player createDiaryRecord["404games",
 	<br/>
 	Others:<br/>
 	Sanjo (GitHub)<br/>
+	Ed! (404forums)<br/>
 	AgentREV (GitHub)<br/>
 	SPJESTER (404forums)<br/>
 	Hub (404forums)<br/>
@@ -225,6 +226,7 @@ player createDiaryRecord["GoT2DayZ",
 	- JoSchaap<br/>
 	- Sanjo (GitHub)<br/>
 	- AgentREV (GitHub)<br/>
+	- Ed! (404forums)<br/>
 	- SPJESTER (404forums)<br/>
 	- Hub (404forums)<br/>
 	- Tonic-_- (BIS-forums)<br/>
