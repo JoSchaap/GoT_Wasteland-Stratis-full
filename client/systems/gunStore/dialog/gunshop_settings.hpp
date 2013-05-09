@@ -20,14 +20,25 @@ class gunshopd {
 			h = 0.661111 * safezoneH;
 		};
 		
-		class ItemSelectedPicture: w_RscPicture
+		class WeaponSelectedPicture: w_RscPicture
 		{
 			idc = gunshop_gun_pic;
 			text = "";
 
-			x = 0.502604 * safezoneW + safezoneX;
+			x = 0.504104 * safezoneW + safezoneX;
 			y = 0.236111 * safezoneH + safezoneY;
-			w = 0.0891668 * safezoneW;
+			w = 0.1507404 * safezoneH * (safezoneH/safezoneW);
+			h = 0.0753702 * safezoneH;
+		};
+		
+		class ItemSelectedPicture: w_RscPicture
+		{
+			idc = gunshop_item_pic;
+			text = "";
+
+			x = 0.525990 * safezoneW + safezoneX;
+			y = 0.236111 * safezoneH + safezoneY;
+			w = 0.0753702 * safezoneH * (safezoneH/safezoneW);
 			h = 0.0753702 * safezoneH;
 		};
 
@@ -140,8 +151,8 @@ class gunshopd {
 		class BuyToCrate: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[1] execVM 'client\systems\gunStore\buyGuns.sqf'";
-			text = "Buy to Crate";
+			onButtonClick = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
+			text = "Buy to Player";
 
 			x = 0.609375 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;

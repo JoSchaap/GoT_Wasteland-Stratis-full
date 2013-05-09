@@ -1,5 +1,5 @@
 /**
- * Script principal qui initialise le système de logistique
+ * Script principal qui initialise le systÃ¨me de logistique
  * 
  * Copyright (C) 2010 madbull ~R3F~
  * 
@@ -21,34 +21,34 @@
 
 if (isServer) then
 {
-	// On crée le point d'attache qui servira aux attachTo pour les objets à charger virtuellement dans les véhicules
-	R3F_LOG_PUBVAR_point_attache = "Land_HelipadEmpty_F" createVehicle [0, 0, 0];
+	// On crÃ©e le point d'attache qui servira aux attachTo pour les objets Ã  charger virtuellement dans les vÃ©hicules
+	R3F_LOG_PUBVAR_point_attache = "Land_HelipadEmpty_F" createVehicle [0,0,0];
 	publicVariable "R3F_LOG_PUBVAR_point_attache";
 };
 
-// Un serveur dédié n'en a pas besoin
+// Un serveur dÃ©diÃ© n'en a pas besoin
 if !(isServer && isDedicated) then
 {
-	// Le client attend que le serveur ai créé et publié la référence de l'objet servant de point d'attache
+	// Le client attend que le serveur ai crÃ©Ã© et publiÃ© la rÃ©fÃ©rence de l'objet servant de point d'attache
 	waitUntil {!isNil "R3F_LOG_PUBVAR_point_attache"};
 	
-	/** Indique quel objet le joueur est en train de déplacer, objNull si aucun */
+	/** Indique quel objet le joueur est en train de dÃ©placer, objNull si aucun */
 	R3F_LOG_joueur_deplace_objet = objNull;
 	
-	/** Pseudo-mutex permettant de n'exécuter qu'un script de manipulation d'objet à la fois (true : vérouillé) */
+	/** Pseudo-mutex permettant de n'exÃ©cuter qu'un script de manipulation d'objet Ã  la fois (true : vÃ©rouillÃ©) */
 	R3F_LOG_mutex_local_verrou = false;
 	
-	/** Objet actuellement sélectionner pour être chargé/remorqué */
+	/** Objet actuellement sÃ©lectionner pour Ãªtre chargÃ©/remorquÃ© */
 	R3F_LOG_objet_selectionne = objNull;
 	
-	// On construit la liste des classes des transporteurs dans les quantités associés (pour les nearestObjects, count isKindOf, ...)
+	// On construit la liste des classes des transporteurs dans les quantitÃ©s associÃ©s (pour les nearestObjects, count isKindOf, ...)
 	R3F_LOG_classes_transporteurs = [];
 	
 	{
 		R3F_LOG_classes_transporteurs = R3F_LOG_classes_transporteurs + [_x select 0];
 	} forEach R3F_LOG_CFG_transporteurs;
 	
-	// On construit la liste des classes des transportables dans les quantités associés (pour les nearestObjects, count isKindOf, ...)
+	// On construit la liste des classes des transportables dans les quantitÃ©s associÃ©s (pour les nearestObjects, count isKindOf, ...)
 	R3F_LOG_classes_objets_transportables = [];
 	
 	{
@@ -60,7 +60,7 @@ if !(isServer && isDedicated) then
 	R3F_LOG_FNCT_remorqueur_init = compile preprocessFile "addons\R3F_ARTY_AND_LOG\R3F_LOG\remorqueur\remorqueur_init.sqf";
 	R3F_LOG_FNCT_transporteur_init = compile preprocessFile "addons\R3F_ARTY_AND_LOG\R3F_LOG\transporteur\transporteur_init.sqf";
 	
-	/** Indique quel est l'objet concerné par les variables d'actions des addAction */
+	/** Indique quel est l'objet concernÃ© par les variables d'actions des addAction */
 	R3F_LOG_objet_addAction = objNull;
 	
 	// Liste des variables activant ou non les actions de menu
@@ -81,6 +81,6 @@ if !(isServer && isDedicated) then
 	R3F_LOG_action_charger_deplace_valide = false;
 	R3F_LOG_action_selectionner_objet_charge_valide = false;
 	
-	/** Ce fil d'exécution permet de diminuer la fréquence des vérifications des conditions normalement faites dans les addAction (~60Hz) */
+	/** Ce fil d'exÃ©cution permet de diminuer la frÃ©quence des vÃ©rifications des conditions normalement faites dans les addAction (~60Hz) */
 	execVM "addons\R3F_ARTY_AND_LOG\R3F_LOG\surveiller_conditions_actions_menu.sqf";
 };

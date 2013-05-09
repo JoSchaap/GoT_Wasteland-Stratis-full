@@ -9,6 +9,7 @@ if(!X_Server) exitWith {};
 
 sideMissions = 1;
 serverSpawning = 1;
+buildingsloot = 1;
 
 //Execute Server Side Scripts.
 [] execVM "server\admins.sqf";
@@ -20,11 +21,18 @@ _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 waitUntil{scriptDone _serverCompiledScripts};
 
 
-diag_log format["WASTELAND SERVER - Server Complie Finished"];
+diag_log format["WASTELAND SERVER - Server Compile Finished"];
 
 #ifdef __DEBUG__
 #else
 //Execute Server Spawning.
+if (buildingsloot == 1) then {
+	diag_log format["GOT WASTELAND - Placing loot in buildings"];
+	_lootspawnz = [] execVM "server\spawning\lootCreation.sqf";
+	waitUntil{sleep 0.1; scriptDone _lootspawnz};
+	diag_log format["GOT WASTELAND - Done placing loot in buildings"];
+	};
+
 if (serverSpawning == 1) then {
     diag_log format["WASTELAND SERVER - Initilizing Server Spawning"];
 	_vehSpawn = [] ExecVM "server\functions\vehicleSpawning.sqf";

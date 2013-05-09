@@ -1,87 +1,51 @@
-//	@file Version: 1.0
+
+//	@file Version: 1.1
 //	@file Name: vehicleCreation.sqf
-//	@file Author: [404] Deadbeat
+//	@file Author: [404] Deadbeat, modded by AgentRev
 //	@file Created: 20/11/2012 05:19
-//	@file Args:
+//	@file Args: markerPos [, carType]
 
 if(!X_Server) exitWith {};
 
-private ["_marker","_cartype","_car","_num","_tipped","_carpos","_type","_townpos"];
-_type = _this select 1;
-_pos = _this select 0;
+private ["_markerPos","_pos","_type","_num","_cartype","_car"];
 
-//Create Civilian Vehicle
-if (_type == 0) then {
-	//Car Initilization, Pick Car Type.
-    _cartype = civilianVehicles select (random (count civilianVehicles - 1));
-    _car = createVehicle [_cartype,_pos,[], 20,"None"];
-	[_car, "nul=[this, 60, 1200, 0, false] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit;
-	processInitCommands;
-    
-	//Clear Cars Inventory
-    clearMagazineCargoGlobal _car;
-    clearWeaponCargoGlobal _car;
+_markerPos = _this select 0;
+
+if (count _this > 1) then
+{
+	_cartype = _this select 1;
 	
-	//Set Cars Attributes
-    _car setFuel (0.50);
-    _car setDamage (random 0.50);
-    _car setDir (random 360);
-	_car disableTIEquipment true;
-    [_car] call randomWeapons;
-
-	//Set original posistion then add to vehicle array
-	_car setVariable["newVehicle",1,true];
-    _car setPosATL [getpos _car select 0,getpos _car select 1,1];
-	_car setVelocity [0,0,0.1];
+	if (_cartype in civilianVehicles) then { _type = 0 };
+	if (_cartype in lightMilitaryVehicles) then { _type = 1 };
+	if (_cartype in mediumMilitaryVehicles) then { _type = 2 };
+}
+else
+{
+	_num = floor (random 100);
+	if (_num < 100) then { _cartype = civilianVehicles call BIS_fnc_selectRandom; _type = 0 };
+	if (_num < 70) then { _cartype = lightMilitaryVehicles call BIS_fnc_selectRandom; _type = 1 };
+	if (_num < 25) then { _cartype = mediumMilitaryVehicles call BIS_fnc_selectRandom; _type = 2 };
 };
 
-//Create Military Vehicle
-if (_type == 1) then {
-	//Car Initilization, Pick Car Type.
-    _cartype = militaryVehicles select (random (count militaryVehicles - 1));
-    _car = createVehicle [_cartype,_pos, [], 30, "None"];
-	[_car, "nul=[this, 60, 1200, 0, false] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit; 
-	processInitCommands;
-    
-	//Clear Cars Inventory
-    clearMagazineCargoGlobal _car;
-    clearWeaponCargoGlobal _car;
+_pos = [_markerPos, random 25, 35, ( if (_type == 1) then { 2 } else { 5 } ), 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
 
-	//Set Cars Attributes
-    _car setFuel (0.50);
-    _car setDamage (random 0.50);
-    _car setDir (random 360);
-	_car disableTIEquipment true;
-    [_car] call randomWeapons;
+//Car Initialization
+_car = createVehicle [_cartype,_pos, [], 0, "None"];
+[_car, 1800, 3600, 0, false, _markerPos] execVM "server\functions\vehicle.sqf";
 
-	//Set authenticity
-	_car setVariable["newVehicle",1,true];
-    _car setPosATL [getpos _car select 0,getpos _car select 1,1];
-	_car setVelocity [0,0,0.1];
-};
+//Clear Cars Inventory
+clearMagazineCargoGlobal _car;
+clearWeaponCargoGlobal _car;
 
-//Create Armed Military Vehicle
-if (_type == 2) then {
-	//Car Initilization, Pick Car Type.
-    _cartype = armedMilitaryVehicles select (random (count armedMilitaryVehicles - 1));
-    _car = createVehicle [_cartype,_pos, [], 30, "None"];
-    [_car, "nul=[this, 60, 1200, 0, false] execVM 'server\functions\vehicle.sqf'"] spawn fn_vehicleInit; 
-	processInitCommands;
+//Set Cars Attributes
+_car setFuel (0.50);
+_car setDamage (random 0.50);
+_car setDir (random 360);
+if (_type > 1) then { _car setVehicleAmmo (random 0.90) };
+_car disableTIEquipment true;
+[_car] call randomWeapons;
 
-	//Clear Cars Inventory
-    clearMagazineCargoGlobal _car;
-    clearWeaponCargoGlobal _car;
-
-	//Set Cars Attributes
-    _car setFuel (0.50);
-    _car setDamage (random 0.50);
-    _car setDir (random 360);
-    _car setVehicleAmmo (random 0.90);
-	_car disableTIEquipment true;
-    [_car] call randomWeapons;
-
-	//Set original posistion then add to vehicle array
-	_car setVariable["newVehicle",1,true];
-    _car setPosATL [getpos _car select 0,getpos _car select 1,1];
-	_car setVelocity [0,0,0.1];
-};
+//Set original posistion then add to vehicle array
+_car setVariable ["newVehicle",1,true];
+_car setPosATL [getpos _car select 0,getpos _car select 1,1];
+_car setVelocity [0,0,0];

@@ -82,7 +82,7 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["Binocular",2];
 
 		_currBox addMagazineCargoGlobal ["16Rnd_9x21_Mag",10];
-		_currBox addMagazineCargoGlobal ["20Rnd_762x45_Mag",25];
+		_currBox addMagazineCargoGlobal ["20Rnd_762x51_Mag",25];
 		_currBox addMagazineCargoGlobal ["100Rnd_65x39_caseless_mag_Tracer",20];
 		_currBox addMagazineCargoGlobal ["200Rnd_65x39_cased_Box",20];		
     };
@@ -119,7 +119,7 @@ switch(_selectedBox) do {
 		_currBox addMagazineCargoGlobal ["UGL_FlareRed_F",10];
 		_currBox addMagazineCargoGlobal ["UGL_FlareYellow_F",10];
 		_currBox addMagazineCargoGlobal ["UGL_FlareCIR_F",10];
-		_currBox addMagazineCargoGlobal ["20Rnd_762x45_Mag",15];
+		_currBox addMagazineCargoGlobal ["20Rnd_762x51_Mag",15];
 		_currBox addMagazineCargoGlobal ["100Rnd_65x39_caseless_mag_Tracer",10];
 		_currBox addMagazineCargoGlobal ["200Rnd_65x39_cased_Box",5];		
     };
