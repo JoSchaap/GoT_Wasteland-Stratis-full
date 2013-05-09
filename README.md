@@ -1,11 +1,11 @@
-GoT_Wasteland-Stratis (Full) v1.08 (Revision:e)
+GoT_Wasteland-Stratis (Full) v1.08 (Revision:f)
 ==================================
 
 All credits for Wasteland go to 404Games and their DEV's
 This is just my alteration.
 
-current status: v1.08(e) (Complete Edition)
-current status: v1.08(e) (Stripped Edition) only if fixes apply to it
+current status: v1.08(f) (Complete Edition)
+current status: v1.08(d) (Stripped Edition) only if fixes apply to it
 
 If you are not famillair with creating PBO files, grab the ready-to-go-PBO here: 
 https://github.com/JoSchaap/Arma3_Binary_PBO
@@ -78,6 +78,17 @@ Changelog
 [Fixed] Ammoboxes not spawning since update to alpha<br/>
 [Fixed] Moving objects caused loss of weapon attachments<br/>
 [Removed] Deprecated function calls<br/>
+-Revision:f-<br/>
+[Added] More spawns for objects and vehicles<br/>
+[Added] Random loot inside buildings all over the map<br/>
+[Added] Backpacks to gunstore<br/>
+[Changed] Starting backpack<br/>
+[Changed] Armed/Civil Heli missions no longer spawn broken<br/>
+[Fixed] Vehicles not respawning<br/>
+[Fixed] Not being able to buy 7.62mm ammo<br/>
+[Fixed] Gunstore now properly checks your inventory space<br/>
+[Fixed] Various broken admin-features<br/>
+
 
 Please be reminded that i did NOT create this mission from scratch, most of the work has been done by the awesome DEV-team @ 404Games. Im just the huy that had some spare time to make it work in ArmA3Alpha :)
 

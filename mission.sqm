@@ -27,7 +27,7 @@ class Mission
 	randomSeed=14957468;
 	class Intel
 	{
-		briefingName="GoT Wasteland v1.08(e) (GoT/JoSchaap)";
+		briefingName="GoT Wasteland v1.08(f) (GoT/JoSchaap)";
 		briefingDescription="GoT (Complete-Edition) Wasteland Survival Sandbox - Originally by: 404Games.co.uk - modded by: JoSchaap - Mission Source+DL at: github.com/JoSchaap";
 		resistanceWest=0;
 		startWeather=0.40000001;
@@ -1129,7 +1129,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=170;
+		items=178;
 		class Item0
 		{
 			position[]={4339.3457,226.45149,3824.2236};
@@ -2207,6 +2207,54 @@ class Mission
 		{
 			position[]={2826.2417,37.320713,3744.2461};
 			name="Spawn_110";
+			type="Empty";
+		};
+		class Item170
+		{
+			position[]={2727.4253,2.6215515,5782.7012};
+			name="Spawn_111";
+			type="Empty";
+		};
+		class Item171
+		{
+			position[]={2209.666,3.1109717,4687.5186};
+			name="Spawn_112";
+			type="Empty";
+		};
+		class Item172
+		{
+			position[]={6326.8193,22.841072,5205.7891};
+			name="Spawn_113";
+			type="Empty";
+		};
+		class Item173
+		{
+			position[]={2457.2717,2.8261375,1156.229};
+			name="Spawn_114";
+			type="Empty";
+		};
+		class Item174
+		{
+			position[]={2616.0925,64.080338,632.31836};
+			name="Spawn_115";
+			type="Empty";
+		};
+		class Item175
+		{
+			position[]={5362.0352,13.416231,3812.7383};
+			name="Spawn_116";
+			type="Empty";
+		};
+		class Item176
+		{
+			position[]={3615.3386,46.144386,6760.1782};
+			name="Spawn_117";
+			type="Empty";
+		};
+		class Item177
+		{
+			position[]={2054.9556,3.0403442,4169.7188};
+			name="Spawn_118";
 			type="Empty";
 		};
 	};

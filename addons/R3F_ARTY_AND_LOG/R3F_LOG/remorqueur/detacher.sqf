@@ -1,7 +1,7 @@
 /**
- * Détacher un objet d'un véhicule
+ * Dï¿½tacher un objet d'un vï¿½hicule
  * 
- * @param 0 l'objet à détacher
+ * @param 0 l'objet ï¿½ dï¿½tacher
  * 
  * Copyright (C) 2010 madbull ~R3F~
  * 
@@ -23,16 +23,16 @@ else
 	_objet = _this select 0;
 	_remorqueur = _objet getVariable "R3F_LOG_est_transporte_par";
 	
-	// Ne pas permettre de décrocher un objet s'il est porté héliporté
+	// Ne pas permettre de dï¿½crocher un objet s'il est portï¿½ hï¿½liportï¿½
 	if ({_remorqueur isKindOf _x} count R3F_LOG_CFG_remorqueurs > 0) then
 	{
-		// On mémorise sur le réseau que le véhicule remorque quelque chose
+		// On mï¿½morise sur le rï¿½seau que le vï¿½hicule remorque quelque chose
 		_remorqueur setVariable ["R3F_LOG_remorque", objNull, true];
-		// On mémorise aussi sur le réseau que le objet est attaché en remorque
+		// On mï¿½morise aussi sur le rï¿½seau que le objet est attachï¿½ en remorque
 		_objet setVariable ["R3F_LOG_est_transporte_par", objNull, true];
 		
 		detach _objet;
-		_objet setVelocity [0, 0, 0];
+		_objet setVelocity [0,0,0];
 		
 		player playMove "AinvPknlMstpSlayWrflDnon_medic";
 		sleep 7;

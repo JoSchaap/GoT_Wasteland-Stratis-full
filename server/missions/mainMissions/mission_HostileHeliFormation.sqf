@@ -33,9 +33,9 @@ _createVehicle = {
 };
 
 _vehicles = [];
-_vehicles set [0, ["B_MH9_F", [2594.64,382.422,0.00133133], 329, _grouphsq] call _createVehicle];
-_vehicles set [1, ["B_MH9_F", [2628.74,596.647,0.598396], 4, _grouphsq] call _createVehicle];
-_vehicles set [2, ["B_MH9_F", [2562.72,451.765,0.00158596], 86, _grouphsq] call _createVehicle];
+_vehicles set [0, ["O_Ka60_F", [2436.24,847.9,0.00133419], 91, _grouphsq] call _createVehicle];
+_vehicles set [1, ["O_Ka60_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
+_vehicles set [2, ["O_Ka60_F", [2416.75,868.842,0.00164366], 75, _grouphsq] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _grouphsq selectLeader _leader;
@@ -87,7 +87,7 @@ _waypoints = [
     _waypoint setWaypointType "MOVE";
     _waypoint setWaypointCompletionRadius 45;
     _waypoint setWaypointCombatMode "WHITE"; // Defensiv behaviour
-    _waypoint setWaypointBehaviour "AWARE"; // Force HostileHelis to normaly drive on the street.
+    _waypoint setWaypointBehaviour "AWARE"; 
     _waypoint setWaypointFormation "STAG COLUMN";
     _waypoint setWaypointSpeed "LIMITED";
 } forEach _waypoints;
@@ -98,8 +98,8 @@ _marker setMarkerSize [1.25, 1.25];
 _marker setMarkerColor "ColorRed";
 _marker setMarkerText "HostileHelis";
 
-_picture = getText (configFile >> "CfgVehicles" >> "B_MH9_F" >> "picture");
-_vehicleName = getText (configFile >> "cfgVehicles" >> "B_MH9_F" >> "displayName");
+_picture = getText (configFile >> "CfgVehicles" >> "O_Ka60_F" >> "picture");
+_vehicleName = getText (configFile >> "cfgVehicles" >> "O_Ka60_F" >> "displayName");
 _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>! AIR ALARM !</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>Hostile AirSquad</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A formation of 3 <t color='%4'>%3</t> Are patroling the island, armed and dangerous! Take them out now!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 messageSystem = _hint;
 if (!isDedicated) then { call serverMessage };

@@ -62,7 +62,7 @@ switch (_mode) do {
 			GET_CTRL(balca_debug_console_history_IDC) lbSetData [(lbSize GET_CTRL(balca_debug_console_history_IDC))-1,_command];
 		};
 		[player, _command] spawn fn_vehicleInit;
-		processInitCommands;
+		//processInitCommands;
 	};
 	case 5: {//exec on server
 		GET_CTRL(balca_debug_console_result_IDC) ctrlSetText '';
@@ -76,7 +76,7 @@ switch (_mode) do {
 		};
 		player setVariable ['PG_result',[]];
 		[player, ("if isServer then {this setVariable [""PG_result"",[call {"+_command+"}],true]}")] spawn fn_vehicleInit;
-		processInitCommands;
+		//processInitCommands;
 
 		[] spawn {
 			_time = time+2;

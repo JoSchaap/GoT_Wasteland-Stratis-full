@@ -8,6 +8,7 @@
 onRespawn = compile preprocessfile "client\clientEvents\onRespawn.sqf";
 onKilled = compile preprocessfile "client\clientEvents\onKilled.sqf";
 onKeyPress = compile preprocessFile "client\clientEvents\onKeyPress.sqf";
+fn_fitsInventory = compile preprocessFileLineNumbers "client\functions\fn_fitsInventory.sqf";
 
 // Player details and actions
 loadPlayerMenu = compile preprocessFile "client\systems\playerMenu\init.sqf";
@@ -36,6 +37,6 @@ client_respawnDialog = compile preprocessFileLineNumbers "client\functions\loadR
 loadGeneralStore = compile preprocessFileLineNumbers "client\systems\generalStore\loadGenStore.sqf";
 loadGunStore = compile preprocessFileLineNumbers "client\systems\gunStore\loadGunStore.sqf";
 
-player groupChat "GoT Wasteland 1.08(D)- Client Compile Complete";
+player groupChat "GoT Wasteland 1.08(F)- Client Compile Complete";
 sleep 1;
 playerCompiledScripts = true;

@@ -1,7 +1,7 @@
 /**
- * Larguer un objet en train d'être héliporté
+ * Larguer un objet en train d'Ãªtre hÃ©liportÃ©
  * 
- * @param 0 l'héliporteur
+ * @param 0 l'hÃ©liporteur
  * 
  * Copyright (C) 2010 madbull ~R3F~
  * 
@@ -18,20 +18,29 @@ else
 {
 	R3F_LOG_mutex_local_verrou = true;
 	
-	private ["_heliporteur", "_objet"];
+	private ["_heliporteur", "_objet", "_velocity"];
 	
 	_heliporteur = _this select 0;
 	_objet = _heliporteur getVariable "R3F_LOG_heliporte";
 	
-	// On mémorise sur le réseau que le véhicule n'héliporte plus rien
+	// On mÃ©morise sur le rÃ©seau que le vÃ©hicule n'hÃ©liporte plus rien
 	_heliporteur setVariable ["R3F_LOG_heliporte", objNull, true];
-	// On mémorise aussi sur le réseau que l'objet n'est plus attaché
+	// On mÃ©morise aussi sur le rÃ©seau que l'objet n'est plus attachÃ©
 	_objet setVariable ["R3F_LOG_est_transporte_par", objNull, true];
+	
+	_velocity = velocity _objet;
 	
 	detach _objet;
 	
-	_objet setPos [getPos _objet select 0, getPos _objet select 1, 0];
-	_objet setVelocity [0, 0, 0];
+	if ([0,0,0] distance velocity _heliporteur < 15 && getPos _heliporteur select 2 < 40) then
+	{
+		_objet setPos [getPos _objet select 0, getPos _objet select 1, 1];
+		_objet setVelocity [0, 0, 0.1];
+	}
+	else
+	{
+		_objet setVelocity (_velocity);
+	};
 	
 	player globalChat format [STR_R3F_LOG_action_heliport_larguer_fait, getText (configFile >> "CfgVehicles" >> (typeOf _objet) >> "displayName")];
 	

@@ -10,6 +10,9 @@ _objPos = _this select 0;
 _Objtype = objectList select (random (count objectList - 1));
 _obj = createVehicle [_Objtype,_objPos,[], 50,"None"]; 
 
+_obj addeventhandler ["hit", {(_this select 0) setdamage 0;}];
+_obj addeventhandler ["dammaged", {(_this select 0) setdamage 0;}];
+
 if(_Objtype == "Land_CanisterPlastic_F") then 
 {
     _obj setVariable["water",20,true];
