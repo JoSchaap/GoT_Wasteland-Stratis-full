@@ -1,11 +1,11 @@
     //Random weapons and items spawning script for wasteland missions.
     //Author : Ed!, [GoT] JoSchaap
 
-    _odd1 = 45;       //The odds that a building is selected to place loot.
-    _odd2 = 45;       //The odds that the selected building's spots will have loot(almost like odds per room).
-    _itemtoweaponratio = 35;    //The chances of an item like food,money etc. will spawn instead of a weapon.
-    randomweaponspawnminmoney = 50;  //The minimum amount of money that can spawn.
-    randomweaponspawnmaxmoney = 200; //The maximum amount of money that can spawn.
+    _odd1 = 30;       //The odds that a building is selected to place loot.
+    _odd2 = 25;       //The odds that the selected building's spots will have loot(almost like odds per room).
+    _itemtoweaponratio = 30;    //The chances of an item like food,money etc. will spawn instead of a weapon.
+    randomweaponspawnminmoney = 30;  //The minimum amount of money that can spawn.
+    randomweaponspawnmaxmoney = 130; //The maximum amount of money that can spawn.
     randomweapontestint = 0.01;   //Sets the intervals in which weaponpositions are tested. (Lower = slower, but more accurate. Higher = faster, but less accurate.)
 
 
@@ -18,8 +18,7 @@ randomweapon_weaponlist = [
 ["arifle_Khaybar_C_F","30Rnd_65x39_caseless_green_mag_Tracer"],
 ["arifle_MX_GL_F","30Rnd_65x39_caseless_mag"],
 ["arifle_Khaybar_GL_F","30Rnd_65x39_caseless_green_mag_Tracer"],
-["srifle_EBR_F","20Rnd_762x51_Mag"], 
-["Binocular"]
+["srifle_EBR_F","20Rnd_762x51_Mag"]
 ];
  
 randomweapon_itemlist = [
@@ -53,21 +52,6 @@ randomweapon_itemlist = [
       _amountmoney = floor(random(randomweaponspawnmaxmoney - randomweaponspawnminmoney)) + randomweaponspawnminmoney;
       _item setVariable ["money", _amountmoney, true];
       _item setVariable ["owner", "world", true];
-     };
-     if(_class == "Land_Teapot_EP1") then {
-      //nothing to do here
-     };
-     if(_class == "Land_Bag_EP1") then {
-      //nothing to do here
-     };
-     if(_class == "Fuel_can") then {
-      _item setVariable["fuel", true, true];
-     };
-     if(_class == "Suitcase") then {
-      //nothing to do here
-     };
-     if(_class == "CZ_VestPouch_EP1") then {
-      //nothing to do here
      };
      _item setPos _position;
     };
