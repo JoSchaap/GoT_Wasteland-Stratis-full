@@ -47,7 +47,7 @@ ammoArray = [
 	["9mm 16Rnd Mag","16Rnd_9x21_Mag",10],
 	["5.56mm 20Rnd Mag","20Rnd_556x45_UW_mag",15],
 	["5.56mm 30Rnd STANAG Mag","30Rnd_556x45_Stanag",10],
-	["7.62mm 20Rnd Mag","20Rnd_762x51_Mag",20],
+	["7.62mm 20Rnd Mag","20Rnd_762x45_Mag",20],
     	["6.5mm 30Rnd CL Mag","30Rnd_65x39_caseless_mag",30],
     	["6.5mm 30Rnd C Mag","30Rnd_65x39_case_mag",25],
 	["6.5mm 100Rnd Belt","100Rnd_65x39_caseless_mag_Tracer",50],
