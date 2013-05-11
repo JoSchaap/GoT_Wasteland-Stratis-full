@@ -18,7 +18,7 @@ randomweapon_weaponlist = [
 ["arifle_Khaybar_C_F","30Rnd_65x39_caseless_green_mag_Tracer"],
 ["arifle_MX_GL_F","30Rnd_65x39_caseless_mag"],
 ["arifle_Khaybar_GL_F","30Rnd_65x39_caseless_green_mag_Tracer"],
-["srifle_EBR_F","20Rnd_762x51_Mag"]
+["srifle_EBR_F","20Rnd_762x45_Mag"]
 ];
  
 randomweapon_itemlist = [
