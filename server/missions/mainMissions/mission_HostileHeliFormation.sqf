@@ -35,7 +35,7 @@ _createVehicle = {
 _vehicles = [];
 _vehicles set [0, ["O_Ka60_F", [2436.24,847.9,0.00133419], 91, _grouphsq] call _createVehicle];
 _vehicles set [1, ["O_Ka60_F", [2418.8,828.152,0.00138879], 285, _grouphsq] call _createVehicle];
-_vehicles set [2, ["O_Ka60_F", [2416.75,868.842,0.00164366], 75, _grouphsq] call _createVehicle];
+_vehicles set [2, ["O_Ka60_F", [2401.98,872.439,0.00141001], 285, _grouphsq] call _createVehicle];
 
 _leader = driver (_vehicles select 0);
 _grouphsq selectLeader _leader;

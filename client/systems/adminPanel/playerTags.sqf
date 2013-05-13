@@ -14,7 +14,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			if (getPlayerUID _x != "") then
 			{
 				clearGroupIcons group _x;
-				group _x addGroupIcon ["x_art"];
+				group _x addGroupIcon ["o_uav"];
 				group _x setGroupIconParams [[1, 0.35, 0, 1], format ["%1 (%2m)", name _x, round (_x distance player)], 0.7, true];
 			};
 		} forEach entities "AllVehicles";
