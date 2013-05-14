@@ -3,6 +3,7 @@ respawnDelay=15;
 disabledAI=1;
 enableItemsDropping = 0;
 loadScreen = "Loading.jpg";
+aikills = 1;
 class Header
 {
 	gameType=Wasteland;
